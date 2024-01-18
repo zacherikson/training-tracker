@@ -18,4 +18,9 @@ Displayed here is a user uploading a run.
 - Record journal entries
 
 ### Technologies
-I am going to use the required technologies in the following ways.
+- Authentication:
+  - JD
+- Database data:
+  - hello
+- WebSocket data:
+  - hello
