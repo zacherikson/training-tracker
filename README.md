@@ -19,8 +19,8 @@ Displayed here is a user uploading a run.
 
 ### Technologies
 - Authentication:
-  - JD
+  - User logins to their account. Name is displayed at the top.
 - Database data:
-  - hello
+  - Workouts are stored in a database. They are displayed in weekly, monthly, and yearly totals.
 - WebSocket data:
-  - hello
+  - Users comment on each other's activities.
