@@ -1,110 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
     <body>
-    <header>
-        <h1>Training Tracker</h1>
-        <nav>
-            <menu>
-                <li><a href="index.html">Login</a></li>
-                <li><a href="workout.html">Workout</a></li>
-                <li><a href="history.html">History</a></li>
-                <li><a href="profile.html">Profile</a></li>
-            </menu>
+        <header>
+            <h1>Training Tracker</h1>
+            <nav>
+                <menu>
+                    <li><a href="index.html">Login</a></li>
+                    <li><a href="workout.html">Workout</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </menu>
+                <hr />
+            </nav>
+        </header>
+
+        <main>
+            <div>
+                <h3>Friends</h3>
+                <li><a href="friend.html">Stevie Wonder</a></li>
+                <li><a href="friend.html">Michael Jackson</a></li>
+                <li><a href="friend.html">Steve Jobs</a></li>
+            </div>
+            <hr/>
+            <h2>Profile <img src="blank-profile-picture-973460_1280.png" alt="profile pic" height="100">
+            </h2>
+            
+            <div id="weekly goals"></div>
+                <div>
+                    <h3>Set Weekly Goals</h3>
+                    <p><input type="text" id="run-goal" placeholder="Enter running goal">
+                        <button>Set Goal</button></p>
+                    <p><input type="text" id="bike-goal" placeholder="Enter biking goal">
+                        <button>Set Goal</button></p>
+                    <p><input type="text" id="swim-goal" placeholder="Enter swimming goal">
+                        <button>Set Goal</button></p>
+                    <p><input type="text" id="gym-goal" placeholder="Enter gym goal">
+                        <button>Set Goal</button></p>
+                    <p><input type="text" id="diet-goal" placeholder="Enter diet goal">
+                        <button>Set Goal</button></p>
+                </div>
+                <div>
+                    <p>Select which goals will be displayed publicly</p>
+                    <form id="goals-form">
+                        <input type="checkbox" id="goal-run" name="goal" value="Run">
+                        <label for="goal-run">Run</label><br>
+                    
+                        <input type="checkbox" id="goal-bike" name="goal" value="Bike">
+                        <label for="goal-bike">Bike</label><br>
+                    
+                        <input type="checkbox" id="goal-swim" name="goal" value="Swim">
+                        <label for="goal-swim">Swim</label><br>
+                    
+                        <input type="checkbox" id="goal-gym" name="goal" value="Gym">
+                        <label for="goal-gym">Gym</label><br>
+                    
+                        <input type="checkbox" id="goal-diet" name="goal" value="Diet">
+                        <label for="goal-diet">Diet</label><br>
+                    </form>
+                </div>
+
+            </div>
+            <div id="achievements">
+                <h3>Achievements</h3>
+                <table>
+                    <tr>
+                    <th>Mile</th>
+                    <th>Marathon</th>
+                    </tr>
+                    <tr>
+                    <td>4:18</td>
+                    <td>2:39</td>
+                    </tr>
+                </table>
+            </div>
+            <hr/>
+            <div id="goal-list">
+                <h3>Weekly Goals</h3>
+                <p><b>Running Miles</b></p>
+                <label for="run"></label>
+                <progress id="run" value="32" max="100"> 32% </progress>
+                <p>32/100</p>
+                <p><b>Biking Minutes</b></p>
+                <label for="bike"></label>
+                <progress id="bike" value="80" max="100"> 80% </progress>
+                <p>80/100</p>  
+                <p><b>Swimming minutes</b></p>
+                <label for="swim"></label>
+                <progress id="swim" value="0" max="100"> 0% </progress>
+                <p>0/100</p>         
+                <p><b>Gym Minutes</b></p>
+                <label for="gym"></label>
+                <progress id="gym" value="25" max="100"> 25% </progress>
+                <p>25/100</p>        
+                <p><b>Diet Rating</b></p>
+                <label for="diet"></label>
+                <progress id="diet" value="8.7" max="10"> 87% </progress>
+                <p>8.7/10</p>
+            </div>
+            
+            
+        </main>
+        
+        <footer>
             <hr />
-        </nav>
-    </header>
-
-    <main>
-        <div>
-            <h3>Friends</h3>
-            <li><a href="friend.html">Stevie Wonder</a></li>
-            <li><a href="friend.html">Michael Jackson</a></li>
-            <li><a href="friend.html">Steve Jobs</a></li>
-        </div>
-        <hr/>
-        <h2>Profile <img src="blank-profile-picture-973460_1280.png" alt="profile pic" height="100">
-        </h2>
-        
-        <div id="weekly goals"></div>
-            <div>
-                <h3>Set Weekly Goals</h3>
-                <p><input type="text" id="run-goal" placeholder="Enter running goal">
-                    <button>Set Goal</button></p>
-                <p><input type="text" id="bike-goal" placeholder="Enter biking goal">
-                    <button>Set Goal</button></p>
-                <p><input type="text" id="swim-goal" placeholder="Enter swimming goal">
-                    <button>Set Goal</button></p>
-                <p><input type="text" id="gym-goal" placeholder="Enter gym goal">
-                    <button>Set Goal</button></p>
-                <p><input type="text" id="diet-goal" placeholder="Enter diet goal">
-                    <button>Set Goal</button></p>
-            </div>
-            <div>
-                <p>Select which goals will be displayed publicly</p>
-                <form id="goals-form">
-                    <input type="checkbox" id="goal-run" name="goal" value="Run">
-                    <label for="goal-run">Run</label><br>
-                
-                    <input type="checkbox" id="goal-bike" name="goal" value="Bike">
-                    <label for="goal-bike">Bike</label><br>
-                
-                    <input type="checkbox" id="goal-swim" name="goal" value="Swim">
-                    <label for="goal-swim">Swim</label><br>
-                
-                    <input type="checkbox" id="goal-gym" name="goal" value="Gym">
-                    <label for="goal-gym">Gym</label><br>
-                
-                    <input type="checkbox" id="goal-diet" name="goal" value="Diet">
-                    <label for="goal-diet">Diet</label><br>
-                </form>
-            </div>
-
-        </div>
-        <div id="achievements">
-            <h3>Achievements</h3>
-            <table>
-                <tr>
-                <th>Mile</th>
-                <th>Marathon</th>
-                </tr>
-                <tr>
-                <td>4:18</td>
-                <td>2:39</td>
-                </tr>
-            </table>
-        </div>
-        <hr/>
-        <div id="goal-list">
-            <h3>Weekly Goals</h3>
-            <p><b>Running Miles</b></p>
-            <label for="run"></label>
-            <progress id="run" value="32" max="100"> 32% </progress>
-            <p>32/100</p>
-            <p><b>Biking Minutes</b></p>
-            <label for="bike"></label>
-            <progress id="bike" value="80" max="100"> 80% </progress>
-            <p>80/100</p>  
-            <p><b>Swimming minutes</b></p>
-            <label for="swim"></label>
-            <progress id="swim" value="0" max="100"> 0% </progress>
-            <p>0/100</p>         
-            <p><b>Gym Minutes</b></p>
-            <label for="gym"></label>
-            <progress id="gym" value="25" max="100"> 25% </progress>
-            <p>25/100</p>        
-            <p><b>Diet Rating</b></p>
-            <label for="diet"></label>
-            <progress id="diet" value="8.7" max="10"> 87% </progress>
-            <p>8.7/10</p>
-        </div>
-          
-        
-    </main>
-    
-    <footer>
-        <hr />
-        <div>Created by <a href="founder.html">Zach Erikson</a></div>
-        <a href="https://github.com/zacherikson/training-tracker">GitHub</a>
-    </footer>
+            <div>Created by <a href="founder.html">Zach Erikson</a></div>
+            <a href="https://github.com/zacherikson/training-tracker">GitHub</a>
+        </footer>
     </body>
 </html>
