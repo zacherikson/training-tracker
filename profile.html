@@ -15,10 +15,64 @@
     </header>
 
     <main>
+        <div>
+            <h3>Friends</h3>
+            <li><a href="friend.html">Stevie Wonder</a></li>
+            <li><a href="friend.html">Michael Jackson</a></li>
+            <li><a href="friend.html">Steve Jobs</a></li>
+        </div>
+        <hr/>
         <h2>Profile <img src="blank-profile-picture-973460_1280.png" alt="profile pic" height="100">
         </h2>
-        <p><b>Bio</b></p>
-        <p>My name is Rick Astler. I like running. I'm never gonna give it up. I hope it never lets me down.</p>
+        <div>
+            <p><b>Bio</b></p>
+            <p>My name is Rick Astler. I like running. I'm never gonna give it up. I hope it never lets me down.</p>
+        </div>
+        <div id="weekly goals"></div>
+            <div>
+                <p><b>Set Weekly Goals</b></p>
+                <p>
+                    <input type="text" id="run-goal" placeholder="Enter running goal">
+                    <button>Set Goal</button>
+                </p>
+                <p>
+                    <input type="text" id="bike-goal" placeholder="Enter biking goal">
+                    <button>Set Goal</button>
+                </p>
+                <p>
+                    <input type="text" id="swim-goal" placeholder="Enter swimming goal">
+                    <button>Set Goal</button>
+                </p>
+                <p>
+                    <input type="text" id="gym-goal" placeholder="Enter gym goal">
+                    <button>Set Goal</button>
+                </p>
+                <p>
+                    <input type="text" id="diet-goal" placeholder="Enter diet goal">
+                    <button>Set Goal</button>
+                </p>
+            </div>
+            <div>
+                <p><b>Display Weekly Goals</b></p>
+                <form id="goals-form">
+                    <input type="checkbox" id="goal-run" name="goal" value="Run">
+                    <label for="goal-run">Run</label><br>
+                
+                    <input type="checkbox" id="goal-bike" name="goal" value="Bike">
+                    <label for="goal-bike">Bike</label><br>
+                
+                    <input type="checkbox" id="goal-swim" name="goal" value="Swim">
+                    <label for="goal-swim">Swim</label><br>
+                
+                    <input type="checkbox" id="goal-gym" name="goal" value="Gym">
+                    <label for="goal-gym">Gym</label><br>
+                
+                    <input type="checkbox" id="goal-diet" name="goal" value="Diet">
+                    <label for="goal-diet">Diet</label><br>
+                </form>
+            </div>
+
+        </div>
         <div id="achievements">
             <p><b>Achievements</b></p>
             <table>
@@ -32,37 +86,7 @@
                 </tr>
             </table>
         </div>
-        <div id="weekly goals"></div>
-            <p><b>Set Weekly Goals</b></p>
-            <p>
-                <input type="text" id="run-goal" placeholder="Enter running goal">
-                <button>Set Goal</button>
-            </p>
-            <p>
-                <input type="text" id="bike-goal" placeholder="Enter biking goal">
-                <button>Set Goal</button>
-            </p>
-            <p>
-                <input type="text" id="swim-goal" placeholder="Enter swimming goal">
-                <button>Set Goal</button>
-            </p>
-            <p>
-                <input type="text" id="gym-goal" placeholder="Enter gym goal">
-                <button>Set Goal</button>
-            </p>
-            <p>
-                <input type="text" id="diet-goal" placeholder="Enter diet goal">
-                <button>Set Goal</button>
-            </p>
-            <!-- <input type="checkbox" id="run" name="run" value="Bike">
-            <label for="run"> Running</label><br>
-            <input type="checkbox" id="bike" name="bike" value="Car">
-            <label for="vehicle2"> I have a car</label><br>
-            <input type="checkbox" id="swim" name="swim" value="Boat">
-            <label for="vehicle3"> I have a boat</label><br> -->
-            
-        </div>
-
+        <hr/>
         <div id="goal-list">
             <h3>Weekly Goals</h3>
             <p><b>Running Miles</b></p>
