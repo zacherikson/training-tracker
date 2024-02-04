@@ -2,7 +2,7 @@
 <html lang="en">
     <body>
         <header>
-            <h1>Training Tracker</h1>
+            <h1>User's Training Tracker</h1>
             <nav>
                 <menu>
                     <li><a href="index.html">Login</a></li>
@@ -15,63 +15,70 @@
         </header>
 
         <main>
-            <div>
+            <div id="friends">
                 <h3>Friends</h3>
                 <li><a href="friend.html">Stevie Wonder</a></li>
                 <li><a href="friend.html">Michael Jackson</a></li>
                 <li><a href="friend.html">Steve Jobs</a></li>
             </div>
             <hr/>
-            <h2>Profile <img src="blank-profile-picture-973460_1280.png" alt="profile pic" height="100">
-            </h2>
-            
-            <div id="weekly goals"></div>
-                <div>
-                    <h3>Set Weekly Goals</h3>
-                    <p><input type="text" id="run-goal" placeholder="Enter running goal">
-                        <button>Set Goal</button></p>
-                    <p><input type="text" id="bike-goal" placeholder="Enter biking goal">
-                        <button>Set Goal</button></p>
-                    <p><input type="text" id="swim-goal" placeholder="Enter swimming goal">
-                        <button>Set Goal</button></p>
-                    <p><input type="text" id="gym-goal" placeholder="Enter gym goal">
-                        <button>Set Goal</button></p>
-                    <p><input type="text" id="diet-goal" placeholder="Enter diet goal">
-                        <button>Set Goal</button></p>
+            <div id="profile">
+                <h2>Profile <img src="blank-profile-picture-973460_1280.png" alt="profile pic" height="100"></h2>
+                <div><p>User's Full Name</p>
+                    <input type="text" id="full-name" placeholder="Change Full Name">
+                    <button>Enter</button>
                 </div>
-                <div>
-                    <p>Select which goals will be displayed publicly</p>
-                    <form id="goals-form">
-                        <input type="checkbox" id="goal-run" name="goal" value="Run">
-                        <label for="goal-run">Run</label><br>
-                    
-                        <input type="checkbox" id="goal-bike" name="goal" value="Bike">
-                        <label for="goal-bike">Bike</label><br>
-                    
-                        <input type="checkbox" id="goal-swim" name="goal" value="Swim">
-                        <label for="goal-swim">Swim</label><br>
-                    
-                        <input type="checkbox" id="goal-gym" name="goal" value="Gym">
-                        <label for="goal-gym">Gym</label><br>
-                    
-                        <input type="checkbox" id="goal-diet" name="goal" value="Diet">
-                        <label for="goal-diet">Diet</label><br>
-                    </form>
-                </div>
+                <div id="weekly goals"></div>
+                    <div>
+                        <h3>Set Weekly Goals</h3>
+                        <p><input type="text" id="run-goal" placeholder="Enter running goal">
+                            <button>Set Goal</button></p>
+                        <p><input type="text" id="bike-goal" placeholder="Enter biking goal">
+                            <button>Set Goal</button></p>
+                        <p><input type="text" id="swim-goal" placeholder="Enter swimming goal">
+                            <button>Set Goal</button></p>
+                        <p><input type="text" id="gym-goal" placeholder="Enter gym goal">
+                            <button>Set Goal</button></p>
+                        <p><input type="text" id="diet-goal" placeholder="Enter diet goal">
+                            <button>Set Goal</button></p>
+                    </div>
+                    <div>
+                        <p>Select which goals will be displayed publicly</p>
+                        <form id="goals-form">
+                            <input type="checkbox" id="goal-run" name="goal" value="Run">
+                            <label for="goal-run">Run</label><br>
+                        
+                            <input type="checkbox" id="goal-bike" name="goal" value="Bike">
+                            <label for="goal-bike">Bike</label><br>
+                        
+                            <input type="checkbox" id="goal-swim" name="goal" value="Swim">
+                            <label for="goal-swim">Swim</label><br>
+                        
+                            <input type="checkbox" id="goal-gym" name="goal" value="Gym">
+                            <label for="goal-gym">Gym</label><br>
+                        
+                            <input type="checkbox" id="goal-diet" name="goal" value="Diet">
+                            <label for="goal-diet">Diet</label><br>
+                        </form>
+                    </div>
 
-            </div>
-            <div id="achievements">
-                <h3>Achievements</h3>
-                <table>
-                    <tr>
-                    <th>Mile</th>
-                    <th>Marathon</th>
-                    </tr>
-                    <tr>
-                    <td>4:18</td>
-                    <td>2:39</td>
-                    </tr>
-                </table>
+                </div>
+                <div id="achievements">
+                    <h3>Achievements</h3>
+                    <table>
+                        <tr>
+                        <th>Mile</th>
+                        <th>Marathon</th>
+                        </tr>
+                        <tr>
+                        <td>4:18</td>
+                        <td>2:39</td>
+                        </tr>
+                    </table>
+                    <input type="text" id="achievement-title" placeholder="Achievement Title">
+                    <input type="text" id="achievement-time" placeholder="Description">
+                    <button>Add achievement</button>
+                </div>
             </div>
             <hr/>
             <div id="goal-list">
