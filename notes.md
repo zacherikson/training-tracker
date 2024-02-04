@@ -28,4 +28,8 @@ Image Formatting:
 
     Displays picture across the full page
 
-
+Progress bar:
+    <label for="bike"></label>
+    <progress id="bike" value="80" max="100"> 80% 
+    </progress>
+            
