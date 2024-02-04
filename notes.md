@@ -19,3 +19,13 @@ profile.html
 friend.html??
     somehow see friend's page
 
+Image Formatting:
+    <style>
+        img {
+            width: 100%;
+        }
+    </style>
+
+    Displays picture across the full page
+
+
