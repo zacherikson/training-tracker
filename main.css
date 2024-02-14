@@ -20,7 +20,6 @@
 
   .headerMenu {
     /* flex: 0 50px; */
-    font-size: 20px;
     background: hsl(223, 57%, 38%);
     color: white;
     margin-top: 0;
@@ -32,6 +31,14 @@
     /* justify-content: start; */
     justify-content: center;
     align-items: center;
+    a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 25px;
+    }
     div {
         width: 100%;
         padding-left: 1rem;
@@ -39,6 +46,7 @@
         a {
             color: white !important;
             text-decoration: none !important;
+            text-align: center;
         }
 
     }
@@ -71,7 +79,6 @@
   main{
     flex: 1;
     font-size: 30px;
-  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,10 +89,27 @@
   
   footer {
     flex: 0 50px;
-    background: hsl(180, 30%, 15%);
+    background: hsl(223, 57%, 38%);
     color: white;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* align_items: center */
+    align-items:center;
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+    GitHub {
+        float: right;
+    }
   }
