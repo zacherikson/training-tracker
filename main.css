@@ -14,24 +14,55 @@
     height: 100%;
   }
 
+  h1 {
+    text-align: center;
+  }
+
   .headerMenu {
-    flex: 0 50px;
+    /* flex: 0 50px; */
     font-size: 20px;
     background: hsl(223, 57%, 38%);
     color: white;
+    margin-top: 0;
   
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    width: 100%;
+    /* justify-content:space-between; */
+    /* justify-content: start; */
+    justify-content: center;
     align-items: center;
     div {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
         a {
-        color: white !important;
-        text-decoration: none !important;
+            color: white !important;
+            text-decoration: none !important;
         }
 
     }
   }
+
+  .partsOfPage {
+    display:flex;
+    flex-direction: row;
+    .friends {
+        flex: 2;
+        padding-left: 1rem;
+        background-color: lightgrey;
+    }
+    .middleWork {
+        flex: 8;
+    }
+    .goal-list {
+        flex: 2;
+        padding-left: 1rem;
+        background-color: lightgrey;
+
+    }
+  }
+  
   
   main{
     flex: 1;
@@ -42,10 +73,8 @@
     align-items: center;
     justify-content: center;
   }
+
   
-  div {
-    padding: 0 0.5em;
-  }
   
   footer {
     flex: 0 50px;

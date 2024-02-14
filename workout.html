@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="workout.css" />
     </head>
     <body>
             <h1>User's Training Tracker</h1>
@@ -18,7 +19,7 @@
                 <div class="middleWork">
                     <nav>
                         <menu class="headerMenu">
-                            <div><a href="index.html">Login</a></div>
+                            <!-- <div><a href="index.html">Login</a></div> -->
                             <div><a href="workout.html">Workout</a></div>
                             <div><a href="history.html">History</a></div>
                             <div><a href="profile.html">Profile</a></div>
@@ -29,17 +30,24 @@
                     <div>
                         <div>
                             <p><b>Upload</b></p>
-                            <button>Run</button>
-                            <button>Bike</button>
-                            <button>Swim</button>
-                            <button>Gym</button>
-                            <button>Diet</button>
-                            <p>
-                                Title <input type="text" id="title" name="title"><br><br>
-                                Distance <input type="text" id="distance" name="distance"><br><br>
-                                Time <input type="text" id="time" name="time"><br><br>
-                                Notes <input type="text" id="notes" name="notes"><br><br>
-                            </p>
+                            <div class="uploadButtons">
+                                <button>Run</button>
+                                <button>Bike</button>
+                                <button>Swim</button>
+                                <button>Gym</button>
+                                <button>Diet</button>
+                            </div>
+                            <div class="activityInfo">
+                                <div class="titleActivity">Title <input type="text" id="title" name="title"></div>
+                                <div class="distanceAndTime">
+                                    <div class="distanceActivity">Distance <input type="text" id="distance" name="distance"></div>
+                                    <div class="timeActivity">Time <input type="text" id="time" name="time"></div>
+                                </div>
+                                <div class="notesActivity">Notes <textarea type="text" rows="15"></textarea></div>
+                            </div>
+                            <div class="uploadContainer">
+                                <button>Upload</button>
+                            </div>
                         </div>
                     </div>
                 </div>

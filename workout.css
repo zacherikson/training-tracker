@@ -1,0 +1,80 @@
+.uploadButtons {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    button {
+        background-color: hsl(223, 57%, 38%);
+        border: none;
+        border-radius: .5rem;
+        color: white;
+        width: 5rem;
+        height: 3rem;
+        box-shadow: 3px 3px 0px #122761;
+    }
+  }
+
+  .titleActivity {
+    text-align: center;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input {
+        width: 40%;
+    }
+  }
+
+  .distanceAndTime {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+  }
+
+  .distanceActivity {
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeActivity {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .notesActivity {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    textarea {
+        width: 80%;
+        height: 12rem;
+        display: flex;
+        justify-content: center;
+
+    }
+  }
+
+  .activityInfo {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+
+  .uploadContainer {
+    text-align: center;
+    button {
+        background-color: hsl(223, 57%, 38%);
+        border: none;
+        border-radius: .5rem;
+        color: white;
+        width: 5rem;
+        height: 3rem;
+        box-shadow: 3px 3px 0px #122761;    
+    }
+  }
+
