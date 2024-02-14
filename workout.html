@@ -4,48 +4,47 @@
         <link rel="stylesheet" href="main.css" />
     </head>
     <body>
-        <header>
             <h1>User's Training Tracker</h1>
-            <nav>
-                <menu class="headerMenu">
-                    <div><a href="index.html">Login</a></div>
-                    <div><a href="workout.html">Workout</a></div>
-                    <div><a href="history.html">History</a></div>
-                    <div><a href="profile.html">Profile</a></div>
-                </menu>
-                <hr />
-            </nav>
-        </header>
-
-        <main>
-            <div id="friends">
-                <h3>Friends</h3>
-                <li><a href="friend.html">Stevie Wonder</a></li>
-                <li><a href="friend.html">Michael Jackson</a></li>
-                <li><a href="friend.html">Steve Jobs</a></li>
-                <p>Stevie just uploaded a workout!</p>
-                <p>Michael just upated his goals!</p>
-            </div>
-            <hr/>
-            <div>
-                <h2>Workout</h2>
-                <div>
-                    <p><b>Upload</b></p>
-                    <button>Run</button>
-                    <button>Bike</button>
-                    <button>Swim</button>
-                    <button>Gym</button>
-                    <button>Diet</button>
-                    <p>
-                        Title <input type="text" id="title" name="title"><br><br>
-                        Distance <input type="text" id="distance" name="distance"><br><br>
-                        Time <input type="text" id="time" name="time"><br><br>
-                        Notes <input type="text" id="notes" name="notes"><br><br>
-                    </p>
+            <div class="partsOfPage">
+                <div class="friends">
+                    <h3>Friends</h3>
+                    <li><a href="friend.html">Stevie Wonder</a></li>
+                    <li><a href="friend.html">Michael Jackson</a></li>
+                    <li><a href="friend.html">Steve Jobs</a></li>
+                    <p>Stevie just uploaded a workout!</p>
+                    <p>Michael just upated his goals!</p>
                 </div>
-            </div>
-            <hr/>
-            <div id="goal-list">
+
+                <div class="middleWork">
+                    <nav>
+                        <menu class="headerMenu">
+                            <div><a href="index.html">Login</a></div>
+                            <div><a href="workout.html">Workout</a></div>
+                            <div><a href="history.html">History</a></div>
+                            <div><a href="profile.html">Profile</a></div>
+                        </menu>
+                    </nav>
+
+
+                    <div>
+                        <div>
+                            <p><b>Upload</b></p>
+                            <button>Run</button>
+                            <button>Bike</button>
+                            <button>Swim</button>
+                            <button>Gym</button>
+                            <button>Diet</button>
+                            <p>
+                                Title <input type="text" id="title" name="title"><br><br>
+                                Distance <input type="text" id="distance" name="distance"><br><br>
+                                Time <input type="text" id="time" name="time"><br><br>
+                                Notes <input type="text" id="notes" name="notes"><br><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="goal-list">
                 <h3>Weekly Goals</h3>
                 <p><b>Running Miles</b></p>
                 <label for="run"></label>
@@ -68,6 +67,10 @@
                 <progress id="diet" value="8.7" max="10"> 87% </progress>
                 <p>8.7/10</p>
             </div>
+        </div>
+
+        <main>
+        
             
             
             
