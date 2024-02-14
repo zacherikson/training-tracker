@@ -5,85 +5,96 @@
         <link rel="stylesheet" href="workout.css" />
     </head>
     <body>
-            <h1>User's Training Tracker</h1>
-            <div class="partsOfPage">
-                <div class="friends">
-                    <h3>Friends</h3>
-                    <li><a href="friend.html">Stevie Wonder</a></li>
-                    <li><a href="friend.html">Michael Jackson</a></li>
-                    <li><a href="friend.html">Steve Jobs</a></li>
-                    <p>Stevie just uploaded a workout!</p>
-                    <p>Michael just upated his goals!</p>
+        <div class="headline">
+            <div class="invisible"></div>
+            <div class="headlineTitle"><h1>User's Training Tracker</h1></div>
+            <div class="logout"><a href="index.html">Logout</a></div>
+        </div>
+        
+        <main class="partsOfPage">
+            <div class="friends">
+                <h3>Friends</h3>
+                <div class="friendsElements">
+                    <div><a href="friend.html">Michael Jackson</a></div>
+                    <div><a href="friend.html">Steve Jobs</a></div>  
+                    <div><a href="friend.html">Stevie Wonder</a></div>
                 </div>
+                <div class="friendUpdates">
+                    <li>Stevie just uploaded a workout!</li>
+                    <li>Michael just upated his goals!</li>
+                </div>
+            </div>
 
-                <div class="middleWork">
-                    <nav>
-                        <menu class="headerMenu">
-                            <!-- <div><a href="index.html">Login</a></div> -->
-                            <div><a href="workout.html">Workout</a></div>
-                            <div><a href="history.html">History</a></div>
-                            <div><a href="profile.html">Profile</a></div>
-                        </menu>
-                    </nav>
+            <div class="middleWork">
+                <nav class="navBar">
+                    <menu class="headerMenu">
+                        <div><a href="workout.html">Workout</a></div>
+                        <div><a href="history.html">History</a></div>
+                        <div><a href="profile.html">Profile</a></div>
+                    </menu>
+                </nav>
 
-
+                <div>
                     <div>
-                        <div>
-                            <div class="uploadTitle"><b>Upload</b></div>
-                            <div class="uploadButtons">
-                                <button>Run</button>
-                                <button>Bike</button>
-                                <button>Swim</button>
-                                <button>Gym</button>
-                                <button>Diet</button>
-                            </div>
-                            <div class="activityInfo">
-                                <div class="titleActivity"><b>Title</b><input type="text" id="title" name="title"></div>
+                        <div class="uploadTitle"><b>Upload</b></div>
+                        <div class="uploadButtons">
+                            <button>Run</button>
+                            <button>Bike</button>
+                            <button>Swim</button>
+                            <button>Gym</button>
+                            <button>Diet</button>
+                        </div>
+                        <div class="activityInfo">
+                            <div class="titleActivity"><b>Title</b><input type="text" id="title" name="title"></div>
                                 <div class="distanceAndTime">
                                     <div class="distanceActivity"><b>Distance</b><input type="text" id="distance" name="distance"></div>
                                     <div class="timeActivity"><b>Time</b><input type="text" id="time" name="time"></div>
                                 </div>
-                                <div class="notesActivity"><b>Notes</b><textarea type="text" rows="15"></textarea></div>
-                            </div>
-                            <div class="uploadContainer">
-                                <button>Upload</button>
-                            </div>
+                            <div class="notesActivity"><b>Notes</b><textarea type="text" rows="15"></textarea></div>
+                        </div>
+                        <div class="uploadContainer">
+                            <button>Upload</button>
                         </div>
                     </div>
                 </div>
+            </div>
 
             <div class="goal-list">
                 <h3>Weekly Goals</h3>
-                <p><b>Running Miles</b></p>
-                <label for="run"></label>
-                <progress id="run" value="32" max="100"> 32% </progress>
-                <p>32/100</p>
-                <p><b>Biking Minutes</b></p>
-                <label for="bike"></label>
-                <progress id="bike" value="80" max="100"> 80% </progress>
-                <p>80/100</p>  
-                <p><b>Swimming minutes</b></p>
-                <label for="swim"></label>
-                <progress id="swim" value="0" max="100"> 0% </progress>
-                <p>0/100</p>         
-                <p><b>Gym Minutes</b></p>
-                <label for="gym"></label>
-                <progress id="gym" value="25" max="100"> 25% </progress>
-                <p>25/100</p>        
-                <p><b>Diet Rating</b></p>
-                <label for="diet"></label>
-                <progress id="diet" value="8.7" max="10"> 87% </progress>
-                <p>8.7/10</p>
+                <div class="goalElements">
+                    <div class="firstGoal">
+                        <p><b>Running Miles</b></p>
+                        <label for="run"></label>
+                        <progress id="run" value="32" max="100"> 32% </progress>
+                        <p>32/100</p>
+                    </div>
+                    <div class="goal">
+                        <p><b>Biking Minutes</b></p>
+                        <label for="bike"></label>
+                        <progress id="bike" value="80" max="100"> 80% </progress>
+                        <p>80/100</p>  
+                    </div>
+                    <div class="goal">
+                        <p><b>Swimming minutes</b></p>
+                        <label for="swim"></label>
+                        <progress id="swim" value="0" max="100"> 0% </progress>
+                        <p>0/100</p>    
+                    </div>
+                    <div class="goal">
+                        <p><b>Gym Minutes</b></p>
+                        <label for="gym"></label>
+                        <progress id="gym" value="25" max="100"> 25% </progress>
+                        <p>25/100</p>        
+                    </div>
+                    <div class="goal">
+                        <p><b>Diet Rating</b></p>
+                        <label for="diet"></label>
+                        <progress id="diet" value="8.7" max="10"> 87% </progress>
+                        <p>8.7/10</p>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <main>
-        
-            
-            
-            
         </main>
-        
         <footer>
             <div><a href="founder.html">Created by Zach Erikson</a></div>
             <div class="GitHub"><a href="https://github.com/zacherikson/training-tracker">GitHub</a></div>

@@ -14,79 +14,153 @@
     height: 100%;
   }
 
-  h1 {
+  .headline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: darkblue;
+    padding-bottom: 0;
+
+    .invisible {
+        flex:1;
+    }
+
+    .headlineTitle {
+        flex: 10;
+        h1 {
+            text-align: center;
+            background-color: darkblue;
+            color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+      }
+
+    .logout {
+        text-align: right;
+        font-size: x-large;
+        padding-top: 20px;
+        padding-right: 2rem;
+        flex: 1;
+        margin-left: 0;
+        a {
+            color: black;
+            background-color: white;
+            text-decoration: none;
+            padding-left: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-right: 1rem;
+            border: 1rem;
+            border-color: black;
+            border-radius: 0.5rem;
+        }
+        a:hover {
+            color:darkblue;
+            background-color: lightgray;
+        }
+    }
+  }
+  
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 14px 16px;
     text-align: center;
+    font-size: 25px;
+    text-decoration: underline;
+    color:darkblue;
   }
 
   .headerMenu {
-    /* flex: 0 50px; */
     background: hsl(223, 57%, 38%);
     color: white;
     margin-top: 0;
     padding-inline-start: 0px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
-    /* justify-content:space-between; */
-    /* justify-content: start; */
-    justify-content: center;
-    align-items: center;
-    a {
-        float: left;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 25px;
-    }
     div {
         width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-top: 0.8rem;
+        text-align: center;
+        padding-bottom:0.9rem;
         a {
-            color: white !important;
-            text-decoration: none !important;
+            margin-top: 0;
+            color: white;
             text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 25px;
         }
-
+        a:hover {
+            background-color:darkblue;
+        }
     }
   }
-
-  /* input {
-    border: 
-  } */
 
   .partsOfPage {
     display:flex;
     flex-direction: row;
     .friends {
         flex: 2;
-        padding-left: 1rem;
         background-color: lightgrey;
+        .friendsElements {
+            display: flex;
+            flex-direction: column;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 1rem;
+            a {
+                color: black;
+            }
+            a:hover {
+                color: darkblue;
+            }
+        }
+        .friendUpdates {
+            padding-left: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-right: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            background-color: white;
+            border:black;
+            border-color: black;
+            border-style: solid;
+        } 
     }
     .middleWork {
         flex: 8;
     }
     .goal-list {
         flex: 2;
-        padding-left: 1rem;
         background-color: lightgrey;
-
+        .goalElements {
+            display: flex;
+            flex-direction: column;
+            padding-left: 1rem;
+            p {
+                margin-top: 0rem;
+                margin-bottom: 0rem;
+            }
+            .firstGoal {
+                margin-top: 0rem;
+                margin-bottom: 1rem;
+            }
+            .goal {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
     }
   }
-  
-  
-  main{
-    flex: 1;
-    font-size: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 
-  
-  
   footer {
     flex: 0 50px;
     background: hsl(223, 57%, 38%);
@@ -108,7 +182,10 @@
         padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
-      }
+    }
+    a:hover {
+        background-color:darkblue;
+    }
     GitHub {
         float: right;
     }

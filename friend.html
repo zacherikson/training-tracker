@@ -4,92 +4,104 @@
         <link rel="stylesheet" href="main.css" />
     </head>
     <body>
-        <header>
-            <h1>User's Training Tracker</h1>
-            <nav>
-                <menu class="headerMenu">
-                    <div><a href="index.html">Login</a></div>
-                    <div><a href="workout.html">Workout</a></div>
-                    <div><a href="history.html">History</a></div>
-                    <div><a href="profile.html">Profile</a></div>
-                </menu>
-                <hr />
-            </nav>
-        </header>
-
-        <main>
-            <div id="friends">
+        <div class="headline">
+            <div class="invisible"></div>
+            <div class="headlineTitle"><h1>User's Training Tracker</h1></div>
+            <div class="logout"><a href="index.html">Logout</a></div>
+        </div>
+        <main class="partsOfPage">
+            <div class="friends">
                 <h3>Friends</h3>
-                <li><a href="friend.html">Stevie Wonder</a></li>
-                <li><a href="friend.html">Michael Jackson</a></li>
-                <li><a href="friend.html">Steve Jobs</a></li>
-                <p>Stevie just uploaded a workout!</p>
-                <p>Michael just upated his goals!</p>
-            </div>
-            <hr/>
-            <div>
-                <h2>Friend's Past Workouts</h2>
-                <div>
-                    <table>
-                        <caption>Long Run</caption>
-                            <tr>
-                                <th>Distance</th>
-                                <th>Time</th>
-                            </tr>
-                            <tr>
-                                <td>10 miles</td>
-                                <td>66 minutes</td>
-                            </tr>
-                    </table>
-                    <p>Rick was a little faster</p>
+                <div class="friendsElements">
+                    <div><a href="friend.html">Michael Jackson</a></div>
+                    <div><a href="friend.html">Steve Jobs</a></div>  
+                    <div><a href="friend.html">Stevie Wonder</a></div>
                 </div>
-                <div>
-                    <table>
-                        <caption>Feb 3 Diet</caption>
-                            <tr>
-                                <th>Rating</th>
-                            </tr>
-                            <tr>
-                                <td>8.9</td>
-                            </tr>
-                    </table>
-                    <p>Avoided the ice cream. In your face Rick</p>
+                <div class="friendUpdates">
+                    <li>Stevie just uploaded a workout!</li>
+                    <li>Michael just upated his goals!</li>
                 </div>
             </div>
-            <hr/>
-            <div id="goal-list">
-                <h3>Friend's Weekly Goals</h3>
-                <p><b>Running Miles</b></p>
-                <label for="run"></label>
-                <progress id="run" value="32" max="100"> 32% </progress>
-                <p>32/100</p>
-                <p><b>Biking Minutes</b></p>
-                <label for="bike"></label>
-                <progress id="bike" value="80" max="100"> 80% </progress>
-                <p>80/100</p>  
-                <p><b>Swimming minutes</b></p>
-                <label for="swim"></label>
-                <progress id="swim" value="0" max="100"> 0% </progress>
-                <p>0/100</p>         
-                <p><b>Gym Minutes</b></p>
-                <label for="gym"></label>
-                <progress id="gym" value="25" max="100"> 25% </progress>
-                <p>25/100</p>        
-                <p><b>Diet Rating</b></p>
-                <label for="diet"></label>
-                <progress id="diet" value="8.7" max="10"> 87% </progress>
-                <p>8.7/10</p>
+
+            <div class="middleWork">
+                <nav class="navBar">
+                    <menu class="headerMenu">
+                        <div><a href="workout.html">Workout</a></div>
+                        <div><a href="history.html">History</a></div>
+                        <div><a href="profile.html">Profile</a></div>
+                    </menu>
+                </nav>
+
+                <div>
+                    <h2>Friend's Past Workouts</h2>
+                    <div>
+                        <table>
+                            <caption>Long Run</caption>
+                                <tr>
+                                    <th>Distance</th>
+                                    <th>Time</th>
+                                </tr>
+                                <tr>
+                                    <td>10 miles</td>
+                                    <td>66 minutes</td>
+                                </tr>
+                        </table>
+                        <p>Rick was a little faster</p>
+                    </div>
+                    <div>
+                        <table>
+                            <caption>Feb 3 Diet</caption>
+                                <tr>
+                                    <th>Rating</th>
+                                </tr>
+                                <tr>
+                                    <td>8.9</td>
+                                </tr>
+                        </table>
+                        <p>Avoided the ice cream. In your face Rick</p>
+                    </div>
+                </div>
             </div>
-            
-            
-            
+
+            <div class="goal-list">
+                <h3>Weekly Goals</h3>
+                <div class="goalElements">
+                    <div class="firstGoal">
+                        <p><b>Running Miles</b></p>
+                        <label for="run"></label>
+                        <progress id="run" value="32" max="100"> 32% </progress>
+                        <p>32/100</p>
+                    </div>
+                    <div class="goal">
+                        <p><b>Biking Minutes</b></p>
+                        <label for="bike"></label>
+                        <progress id="bike" value="80" max="100"> 80% </progress>
+                        <p>80/100</p>  
+                    </div>
+                    <div class="goal">
+                        <p><b>Swimming minutes</b></p>
+                        <label for="swim"></label>
+                        <progress id="swim" value="0" max="100"> 0% </progress>
+                        <p>0/100</p>    
+                    </div>
+                    <div class="goal">
+                        <p><b>Gym Minutes</b></p>
+                        <label for="gym"></label>
+                        <progress id="gym" value="25" max="100"> 25% </progress>
+                        <p>25/100</p>        
+                    </div>
+                    <div class="goal">
+                        <p><b>Diet Rating</b></p>
+                        <label for="diet"></label>
+                        <progress id="diet" value="8.7" max="10"> 87% </progress>
+                        <p>8.7/10</p>
+                    </div>
+                </div>
+            </div>
         </main>
-        
         <footer>
-            <hr />
-            <div>Created by <a href="founder.html">Zach Erikson</a>
-            <a href="https://github.com/zacherikson/training-tracker">GitHub</a>
-            </div>
+            <div><a href="founder.html">Created by Zach Erikson</a></div>
+            <div class="GitHub"><a href="https://github.com/zacherikson/training-tracker">GitHub</a></div>
         </footer>
     </body>
 </html>
