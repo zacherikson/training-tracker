@@ -24,7 +24,7 @@
     background: hsl(223, 57%, 38%);
     color: white;
     margin-top: 0;
-  
+    padding-inline-start: 0px;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -43,6 +43,10 @@
 
     }
   }
+
+  /* input {
+    border: 
+  } */
 
   .partsOfPage {
     display:flex;
