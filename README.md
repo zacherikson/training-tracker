@@ -47,7 +47,7 @@ Displayed here is a user uploading a run.
     - Friend updates on the left of most pages
 
 ### CSS Deliverable
-I created .css files for my login, workout, history, profile, and founder pages. 
+I created a main.css file and specific .css files for my login, workout, history, profile, and founder pages. 
 
 30% Header, footer, and main content body
     - Header: Title of website
