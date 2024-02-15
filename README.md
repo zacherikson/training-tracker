@@ -47,9 +47,19 @@ Displayed here is a user uploading a run.
     - Friend updates on the left of most pages
 
 ### CSS Deliverable
+I created .css files for my login, workout, history, profile, and founder pages. 
+
 30% Header, footer, and main content body
+    - Header: Title of website
+    - Footer: At bottom, contains link to founder page and GitHub
+    - main: three sections: friends, whatever page its on, and weekly goals
 20% Navigation elements
+    - Middle menu bar with links to the workout, history, and profile pages
 10% Responsive to window resizing
+    - Utilized flex elements 
 20% Application elements
+    - Buttons and links are a darker blue when hovered over, etc.
 10% Application text content
+    - Placed text within div elements and spaced them evenly throughout the pages
 10% Application images
+    - Founder page at bottom has a big picture centered in the middle of the page. 
