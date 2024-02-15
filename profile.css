@@ -1,3 +1,74 @@
 .profile {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.profileSettings {
+    .invisible {
+        flex:2
+    }
+    .profileOption {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex:8;
+        p {
+            text-align: center;
+        }
+        input {
+            width: 70%;
+            border-radius: 1rem;
+        }
+    }
+}
+
+button {
+        background-color: hsl(223, 57%, 38%);
+        border: none;
+        border-radius: .5rem;
+        color: white;
+        font-size:small;
+        height: 2rem;
+        box-shadow: 3px 3px 0px #122761;
+}
+button:hover {
+    background-color:darkblue;
+}
+
+.weeklyGoals {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1rem;
+    .invisible {
+        flex:2;
+    }
+    .setGoals {
+        flex: 5;
+        text-align: end;
+        input {
+            width: 40%;
+            border-radius: 1rem;
+        }
+    }
+    .whichGoals {
+        flex: 5;
+        text-align: left;
+    }
+}
+
+.achievements {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    table, th, td {
+        border: 1px solid;
+        padding: 3px;
+    }
+    .addAchievement {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
 }
