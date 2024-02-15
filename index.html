@@ -2,10 +2,15 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="login.css" />
     </head>
     <body>
         <header>
-            <h1>Training Tracker</h1>
+            <div class="headline">
+                <div class="invisible"></div>
+                <div class="headlineTitle"><h1>Training Tracker</h1></div>
+                <div class="logout"></div>
+            </div>
             <nav>
                 <menu class="headerMenu">
                     <div><a href="index.html">Login</a></div>
@@ -16,23 +21,23 @@
             </nav>
         </header>
         <main>
-            <h2>Login</h2>
-            <form method="get" action="workout.html">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter username" />
-            </form>
-            <form method="get" action="workout.html">
-                <label for="password">Password</label>
-                <input type="text" id="password" placeholder="Enter password" />
-            </form>
-            <button type="submit">Login</button>
-            
+            <div class="loginPage">
+                <h2 class="loginTitle">Login</h2>
+                <form method="get" action="workout.html">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter username" />
+                </form>
+                <form method="get" action="workout.html">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" placeholder="Enter password" />
+                </form>
+                <button type="submit">Login</button>
+            </div>
         </main>
 
-        <footer>
-            <hr />
-            <div>Created by <a href="founder.html">Zach Erikson</a></div>
-            <a href="https://github.com/zacherikson/training-tracker">GitHub Repo</a>
+        <footer class="loginFooter">
+            <div><a href="founder.html">Created by Zach Erikson</a></div>
+            <div class="GitHub"><a href="https://github.com/zacherikson/training-tracker">GitHub</a></div>
         </footer>
     </body>
 </html>

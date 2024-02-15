@@ -1,0 +1,25 @@
+.founderPart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+        text-decoration: underline;
+    }
+}
+
+img {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 1rem;
+}
+
+.ogQuote{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.signature {
+    text-align: right;
+    padding-bottom: 10px;
+}
