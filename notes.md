@@ -326,3 +326,176 @@ labeler('fish');
 
 labeler('fish', 'animal');
 // OUTPUT: animal=fish
+
+Anonymous functions
+// Function that takes a function as a parameter
+function doMath(operation, a, b) {
+  return operation(a, b);
+}
+
+// Anonymous function assigned to a variable
+const add = function (a, b) {
+  return a + b;
+};
+
+console.log(doMath(add, 5, 3));
+// OUTPUT: 8
+
+// Anonymous function assigned to a parameter
+console.log(
+  doMath(
+    function (a, b) {
+      return a - b;
+    },
+    5,
+    3
+  )
+);
+// OUTPUT: 2
+
+Inner Functions
+function labeler(value) {
+  function stringLabeler(value) {
+    console.log('string=' + value);
+  }
+  function numberLabeler(value) {
+    console.log('number=' + value);
+  }
+
+  if (typeof value == 'string') {
+    stringLabeler(value);
+  } else if (typeof value == 'number') {
+    numberLabeler(value);
+  }
+}
+
+labeler(5);
+// OUTPUT: number=5
+
+labeler('fish');
+// OUTPUT: string=fish
+
+Arrow Functions
+const a = [1, 2, 3, 4];
+
+// standard function syntax
+a.sort(function (v1, v2) {
+  return v1 - v2;
+});
+
+// arrow function syntax
+a.sort((v1, v2) => v1 - v2);
+
+() => 3;
+// RETURNS: 3
+
+() => {
+  3;
+};
+// RETURNS: undefined
+
+() => {
+  return 3;
+};
+// RETURNS: 3
+
+
+Closure
+function makeClosure(a) {
+  a = 'a2';
+  const b = 'b2';
+  return () => [a, b];
+}
+const a = 'a';
+const b = 'b';
+
+const closure = makeClosure(a);
+console.log(closure());
+// OUTPUT: ['a2', 'b2']
+
+console.log(a, b);
+// OUTPUT: 'a' 'b'
+
+Debounce FUnction
+window.addEventListener(
+  'scroll',
+  debounce(500, () => {
+    console.log('Executed an expensive calculation');
+  })
+);
+
+function debounce(windowMs, windowFunc) {
+  let timeout;
+  return function () {
+    console.log('scroll event');
+    clearTimeout(timeout);
+    timeout = setTimeout(() => windowFunc(), windowMs);
+  };
+}
+
+Arrow functions are a bit different because they inherit the this pointer of their creation context. So if we change our previous example to return an arrow function, then the this pointer at the time of creation will be globalThis.
+
+globalThis.x = 'global';
+const obj = {
+  x: 'object',
+  f: () => console.log(this.x),
+};
+obj.f();
+// OUTPUT: global
+
+DOM
+Access DOM with document variable
+function displayElement(el) {
+  console.log(el.tagName);
+  for (const child of el.children) {
+    displayElement(child);
+  }
+}
+displayElement(document);
+
+const listElements = document.querySelectorAll('p');
+for (const el of listElements) {
+  console.log(el.textContent);
+}
+
+Modifying DOM
+function insertChild(parentSelector, text) {
+  const newChild = document.createElement('div');
+  newChild.textContent = text;
+
+  const parentElement = document.querySelector(parentSelector);
+  parentElement.appendChild(newChild);
+}
+insertChild('#courses', 'new course');
+
+function deleteElement(elementSelector) {
+  const el = document.querySelector(elementSelector);
+  el.parentElement.removeChild(el);
+}
+deleteElement('#courses div');
+
+Event Listener
+const submitDataEl = document.querySelector('#submitData');
+submitDataEl.addEventListener('click', function (event) {
+  console.log(event.type);
+});
+
+Clipboard	Cut, copied, pasted
+Focus	An element gets focus
+Keyboard	Keys are pressed
+Mouse	Click events
+Text selection	When text is selected
+
+You can also add event listeners directly in the HTML. For example, here is a onclick handler that is attached to a button.
+<button onclick='alert("clicked")'>click me</button>
+
+
+Local Storage
+Function	Meaning
+setItem(name, value)	Sets a named item's value into local storage
+getItem(name)	Gets a named item's value from local storage
+removeItem(name)	Removes a named item from local storage
+clear()	Clears all items in local storage
+
+Async
+One important restriction for working with await is that you cannot call await unless it is called at the top level of the JavaScript, or is in a function that is defined with the async keyword. Applying the async keyword transforms the function so that it returns a promise that will resolve to the value that was previously returned by the function. Basically this turns any function into an asynchronous function, so that it can in turn make asynchronous requests.
