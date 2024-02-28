@@ -1,7 +1,7 @@
 class Workout {
     constructor() {
         this.updateHeadline();
-        this.addEventListeners();
+        this.hideUploadInfo();
     }
 
     updateHeadline() {
@@ -16,31 +16,35 @@ class Workout {
         return localStorage.getItem('userName') ?? 'User';
     }
 
+    hideUploadInfo() {
+        document.getElementById('activityInfo').style.display = 'none'
+        document.getElementById('uploadContainer').style.display = 'none'
+    }
+
     setupRunBikeSwimUpload() {
-        document.getElementsById('distance').style.display = '';
-        document.getElementById('time').style.display = '';
-        document.getElementById('diet').style.display = 'none'; 
+        document.getElementById('activityInfo').style.display = ''
+        document.getElementById('distanceActivity').style.display = '';
+        document.getElementById('timeActivity').style.display = '';
+        document.getElementById('dietActivity').style.display = 'none';
+        document.getElementById('uploadContainer').style.display = ''
     }
 
     setupGymUpload() {
-        document.getElementsById('distance').style.display = 'none';
-        document.getElementById('time').style.display = '';
-        document.getElementById('diet').style.display = 'none'; 
+        document.getElementById('activityInfo').style.display = ''
+        document.getElementById('distanceActivity').style.display = 'none';
+        document.getElementById('timeActivity').style.display = '';
+        document.getElementById('dietActivity').style.display = 'none';
+        document.getElementById('uploadContainer').style.display = ''
     }
 
     setupDietUpload() {
-        document.getElementsById('distance').style.display = 'none';
-        document.getElementById('time').style.display = 'none';
-        document.getElementById('diet').style.display = ''; 
+        document.getElementById('activityInfo').style.display = ''
+        document.getElementById('distanceActivity').style.display = 'none';
+        document.getElementById('timeActivity').style.display = 'none';
+        document.getElementById('dietActivity').style.display = '';
+        document.getElementById('uploadContainer').style.display = ''
     }
 
-    addEventListeners() {
-        document.querySelector('button[name="run"]').addEventListener('click', () => this.setupRunBikeSwimUpload());
-        document.querySelector('button[name="bike"]').addEventListener('click', () => this.setupRunBikeSwimUpload());
-        document.querySelector('button[name="swim"]').addEventListener('click', () => this.setupRunBikeSwimUpload());
-        document.querySelector('button[name="gym"]').addEventListener('click', () => this.setupGymUpload());
-        document.querySelector('button[name="diet"]').addEventListener('click', () => this.setupDietUpload());
-    }
 }
 
 const workout = new Workout();

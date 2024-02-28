@@ -38,22 +38,22 @@
                     <div>
                         <div class="uploadTitle"><b>Upload</b></div>
                         <div class="uploadButtons">
-                            <button name="run">Run</button>
-                            <button name="bike">Bike</button>
-                            <button name="swim">Swim</button>
-                            <button name="gym">Gym</button>
-                            <button name="diet">Diet</button>
+                            <button name="run" onclick="workout.setupRunBikeSwimUpload(this)">Run</button>
+                            <button name="bike" onclick="workout.setupRunBikeSwimUpload(this)">Bike</button>
+                            <button name="swim" onclick="workout.setupRunBikeSwimUpload(this)">Swim</button>
+                            <button name="gym" onclick="workout.setupGymUpload(this)">Gym</button>
+                            <button name="diet" onclick="workout.setupDietUpload(this)">Diet</button>
                         </div>
-                        <div class="activityInfo">
+                        <div id="activityInfo">
                             <div class="titleActivity"><b>Title</b><input type="text" id="title" name="title"></div>
                             <div class="distanceAndTimeAndDiet">
-                                <div class="distanceActivity"><b>Distance</b><input type="text" id="distance" name="distance"></div>
-                                <div class="timeActivity"><b>Time</b><input type="text" id="time" name="time"></div>
-                                <div class="dietActivity"><b>Diet</b><input type="text" id="diet" name="diet"></div>
+                                <div id="distanceActivity"><b>Distance</b><input type="text" id="distance" name="distance"></div>
+                                <div id="timeActivity"><b>Time</b><input type="text" id="time" name="time"></div>
+                                <div id="dietActivity"><b>Diet Rating</b><input type="text" id="diet" name="diet"></div>
                             </div>
                             <div class="notesActivity"><b>Notes</b><textarea type="text" rows="15"></textarea></div>
                         </div>
-                        <div class="uploadContainer">
+                        <div id="uploadContainer">
                             <button>Upload</button>
                         </div>
                     </div>
