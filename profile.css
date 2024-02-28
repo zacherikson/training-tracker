@@ -48,6 +48,7 @@ button:hover {
     .setGoals {
         flex: 5;
         text-align: end;
+        margin-bottom: 30px;
         input {
             width: 40%;
             border-radius: 1rem;
@@ -60,22 +61,6 @@ button:hover {
         flex: 5;
         text-align: left;
     }
-}
-
-.achievements {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 60px;
-    table, th, td {
-        border: 1px solid;
-        padding: 3px;
-    }
-    .addAchievement {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-    
 }
 
 .smallGoalTitle {
