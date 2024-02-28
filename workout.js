@@ -130,8 +130,11 @@ class Workout {
             };
         }
 
-        let history = JSON.parse(localStorage.getItem('activityData')) || [];
+        console.log(activityData);
+        let history = JSON.parse(localStorage.getItem('activities')) || [];
+        console.log(history);
         history.push({activityData});
+        console.log(history);
         localStorage.setItem('activities', JSON.stringify(history));
 
         this.showSuccessfulUpload();
