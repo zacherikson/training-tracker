@@ -109,12 +109,14 @@ class Workout {
             };
         }
 
-        let activityDataJSON = JSON.stringify(activityData);
-
-        localStorage.setItem('activityData', activityDataJSON);
-        
+        let history = JSON.parse(localStorage.getItem('activityData')) || [];
+        history.push({activityData});
+        localStorage.setItem('activities', JSON.stringify(history));
     }
 
+    getActivities() {
+        return localStorage.getItem('activities') ?? "No activities";
+    }
 }
 
 const workout = new Workout();
