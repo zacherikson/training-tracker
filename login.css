@@ -18,6 +18,11 @@
         padding-bottom: 12px;
         box-sizing: border-box;
         display: grid;
+        align-items: center;
+        justify-items: center;
+        label {
+            margin-bottom: 5px;
+        }
     }
 
     button {
@@ -29,6 +34,8 @@
         width: 3.5rem;
         height: 2rem;
         box-shadow: 3px 3px 0px #122761;
+        margin-top: 7px;
+        
     }
     button:hover {
         background-color:darkblue;

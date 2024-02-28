@@ -1,9 +1,9 @@
 class workout {
-    constructor() {
-        const usesrNameEl = document.querySelector('.username');
-        userNameEl.textContent = this.getUserName();
+    // constructor() {
+    //     const usesrNameEl = document.querySelector('.username');
+    //     userNameEl.textContent = this.getUserName();
     
-    }
+    // }
 
     updateHeadline() {
         const headlineTitleEl = document.querySelector('.headlineTitle');
@@ -16,4 +16,9 @@ class workout {
     getUserName() {
         return localStorage.getItem('userName');
     }
+
+    
 }
+
+const workouts = workout();
+updateHeadline();
