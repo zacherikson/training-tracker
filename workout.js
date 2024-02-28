@@ -93,7 +93,7 @@ class Workout {
         document.getElementById('title').value = '';
         document.getElementById('distance').value = '';
         document.getElementById('time').value = '';
-        document.getElementById('diet').value = '';
+        document.getElementById('dietInput').value = '';
         document.getElementById('note').value = '';
     }
     
@@ -144,7 +144,7 @@ class Workout {
             };
         }
         if (this.workoutType === 'Diet') {
-            let diet = document.getElementById('diet').value;
+            let diet = document.getElementById('dietProgress').value;
             activityData = {
                 type: this.workoutType,
                 title: title,
