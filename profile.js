@@ -1,4 +1,4 @@
-class Profile {
+class Goals {
     name;
     changeName() {
         this.name = document.getElementById('full-name').value;
@@ -10,4 +10,4 @@ class Profile {
     }
 }
 
-const Profile = new Profile();
+const Goals = new Goals();

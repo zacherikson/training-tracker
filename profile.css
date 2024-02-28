@@ -63,6 +63,13 @@ button:hover {
     }
 }
 
+h2 {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    align-items: center;
+}
+
 .smallGoalTitle {
     display: flex;
     justify-content:center;
