@@ -43,21 +43,24 @@ class History {
             let activityData = activities[activity].activityData
             activityEl.innerHTML = `
                 <div class="workout">
-                    <div>${activityData.title}</div>
+                    <div><b>${activityData.title}</b></div>
                     <table>
                         <tr>
+                            <th>Type</th>
                             <th>Distance</th>
                             <th>Time</th>
                             <th>Diet</th>
                         </tr>
                         <tr>
+                            <td>${activityData.type || 'N/A'}</td>
                             <td>${activityData.distance || 'N/A'}</td>
                             <td>${activityData.time || 'N/A'}</td>
                             <td>${activityData.dietRating || 'N/A'}</td>
                         </tr>
                     </table>
                     <p>${activityData.notes || ''}</p>
-                </div>`;
+                </div>
+                <hr>`;
             historyEl.appendChild(activityEl); 
         };
     }

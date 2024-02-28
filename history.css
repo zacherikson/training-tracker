@@ -9,6 +9,11 @@
         text-decoration: underline;
     }
     
+    
+}
+
+.marginBottom {
+    padding-bottom: 38px;
 }
 
 .workout {
@@ -25,8 +30,8 @@
         padding: 3px;
     }
     p {
-        padding-left: 5rem;
-        padding-right: 5rem;
-        padding-bottom: 1.5rem;
+        padding-left: 12rem;
+        padding-right: 12rem;
+        /* padding-bottom: 1.5rem; */
     }
 }
