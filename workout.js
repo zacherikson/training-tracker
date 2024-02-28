@@ -1,12 +1,11 @@
-class workout {
-    // constructor() {
-    //     const usesrNameEl = document.querySelector('.username');
-    //     userNameEl.textContent = this.getUserName();
-    
-    // }
+class Workout {
+    constructor() {
+        this.updateHeadline();
+        this.addEventListeners();
+    }
 
     updateHeadline() {
-        const headlineTitleEl = document.querySelector('.headlineTitle');
+        const headlineTitleEl = document.querySelector('.headlineTitle h1');
         if (headlineTitleEl) {
           const userName = this.getUserName();
           headlineTitleEl.textContent = `${userName}'s Training Tracker`;
@@ -14,11 +13,35 @@ class workout {
     }
 
     getUserName() {
-        return localStorage.getItem('userName');
+        return localStorage.getItem('userName') ?? 'User';
     }
 
-    
+    setupRunBikeSwimUpload() {
+        document.getElementsById('distance').style.display = '';
+        document.getElementById('time').style.display = '';
+        document.getElementById('diet').style.display = 'none'; 
+    }
+
+    setupGymUpload() {
+        document.getElementsById('distance').style.display = 'none';
+        document.getElementById('time').style.display = '';
+        document.getElementById('diet').style.display = 'none'; 
+    }
+
+    setupDietUpload() {
+        document.getElementsById('distance').style.display = 'none';
+        document.getElementById('time').style.display = 'none';
+        document.getElementById('diet').style.display = ''; 
+    }
+
+    addEventListeners() {
+        document.querySelector('button[name="run"]').addEventListener('click', () => this.setupRunBikeSwimUpload());
+        document.querySelector('button[name="bike"]').addEventListener('click', () => this.setupRunBikeSwimUpload());
+        document.querySelector('button[name="swim"]').addEventListener('click', () => this.setupRunBikeSwimUpload());
+        document.querySelector('button[name="gym"]').addEventListener('click', () => this.setupGymUpload());
+        document.querySelector('button[name="diet"]').addEventListener('click', () => this.setupDietUpload());
+    }
 }
 
-const workouts = workout();
-updateHeadline();
+const workout = new Workout();
+
