@@ -135,7 +135,19 @@ class Workout {
         localStorage.setItem('activities', JSON.stringify(history));
 
         this.showSuccessfulUpload();
+        this.friendUpdate(activityData);
         this.clearInputs();
+    }
+
+    friendUpdate(activity) {
+        const friendUpdatesEl = document.querySelector('.friendUpdates');
+        const updateEl = document.createElement('div');
+        updateEl.className = 'updateActivity';
+        updateEl.innerHTML = `
+        <div class="updateActivity">
+            <li>${localStorage.getItem('userName')} just uploaded a ${activity.type}!</li>
+        </div>`;
+        friendUpdatesEl.append(updateEl);
     }
 }
 

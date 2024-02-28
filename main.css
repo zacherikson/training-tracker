@@ -14,6 +14,13 @@
     height: 100%;
   }
 
+  #addNewFriend {
+    display: flex;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    }
+
   .headline {
     display: flex;
     flex-direction: row;
@@ -26,6 +33,7 @@
         padding: 0.5rem;
         height: 20px;
     }
+
 
     .headlineTitle {
         flex: 10;

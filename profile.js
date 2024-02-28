@@ -1,7 +1,6 @@
 class Goals {
     constructor() {
         this.updateWeeklyGoals();
-        //this.displayGoals();
     }
 
     runGoalUpload() {
@@ -30,40 +29,6 @@ class Goals {
         this.updateWeeklyGoals();
     }
 
-    displayGoals() {
-        console.log(document.getElementById('goal-run').checked);
-        if (document.getElementById('goal-run').checked){
-            document.getElementById('firstGoal').style.display = '';
-        } else {
-            document.getElementById('firstGoal').style.display = 'none';
-        }
-
-        if (document.getElementById('goal-bike').checked){
-            document.getElementById('secondGoal').style.display = '';
-        } else {
-            document.getElementById('secondGoal').style.display = 'none';
-        }
-
-        if (document.getElementById('goal-swim').checked){
-            document.getElementById('thirdGoal').style.display = '';
-        } else {
-            document.getElementById('thirdGoal').style.display = 'none';
-        }
-
-        if (document.getElementById('goal-gym').checked){
-            document.getElementById('fourthGoal').style.display = '';
-        } else {
-            document.getElementById('fourthGoal').style.display = 'none';
-        }
-
-        if (document.getElementById('goal-diet').checked){
-            document.getElementById('fifthGoal').style.display = '';
-        } else {
-            document.getElementById('fifthGoal').style.display = 'none';
-        }
-       
-    }
-
     updateWeeklyGoals() {
         let runTotal = 0;
         let bikeTotal = 0;
@@ -76,24 +41,35 @@ class Goals {
         for (const activity in activities) {
             let activityData = activities[activity].activityData;
             if (activityData.type === 'Run') {
-                runTotal += parseFloat(activityData.distance);
+                if (parseFloat(activityData.distance)){
+                    runTotal += parseFloat(activityData.distance);
+                }
             }
             if (activityData.type === 'Bike') {
-                bikeTotal += parseFloat(activityData.time);
+                if (parseFloat(activityData.time)) {
+                    bikeTotal += parseFloat(activityData.time);
+                }
             }
             if (activityData.type === 'Swim') {
-                swimTotal += parseFloat(activityData.time);
+                if (parseFloat(activityData.time)) {
+                    swimTotal += parseFloat(activityData.time);
+                }
             }
             if (activityData.type === 'Gym') {
-                gymTotal += parseFloat(activityData.time);
+                if (parseFloat(activityData.time)) {
+                    gymTotal += parseFloat(activityData.time);
+                }
             }
             if (activityData.type === 'Diet') {
-                dietTotal += parseFloat(activityData.dietRating);
-                i += 1;
+                if (parseFloat(activityData.dietRating)) {
+                    dietTotal += parseFloat(activityData.dietRating);
+                    i += 1;
+                }                
             }
         }
         if (i > 0) {
-            dietAverage = dietTotal / i;
+            dietAverage = (dietTotal / i).toFixed(1);
+            console.log(dietAverage);
         }
 
         let maxRun = localStorage.getItem('runGoal');
@@ -132,7 +108,6 @@ class Goals {
             document.getElementById('dietNumberProgress').textContent = dietAverage + '/' + maxDiet;
         }
     }
-
 }
 
 const goal = new Goals();

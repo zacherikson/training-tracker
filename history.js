@@ -61,7 +61,9 @@ class History {
                     <p>${activityData.notes || ''}</p>
                 </div>
                 <hr>`;
-            historyEl.appendChild(activityEl);
+            //historyEl.appendChild(activityEl);
+            historyEl.insertBefore(activityEl, historyEl.firstChild);
+
             }
             if (activityData.type === 'Bike') {
                 activityEl.innerHTML = `
@@ -82,7 +84,9 @@ class History {
                     <p>${activityData.notes || ''}</p>
                 </div>
                 <hr>`;
-            historyEl.appendChild(activityEl);
+            //historyEl.appendChild(activityEl);
+            historyEl.insertBefore(activityEl, historyEl.firstChild);
+
             }
             if (activityData.type === 'Swim') {
                 activityEl.innerHTML = `
@@ -103,7 +107,9 @@ class History {
                     <p>${activityData.notes || ''}</p>
                 </div>
                 <hr>`;
-            historyEl.appendChild(activityEl);
+            //historyEl.appendChild(activityEl);
+            historyEl.insertBefore(activityEl, historyEl.firstChild);
+
             }
             if (activityData.type === 'Gym') {
                 activityEl.innerHTML = `
@@ -122,7 +128,9 @@ class History {
                     <p>${activityData.notes || ''}</p>
                 </div>
                 <hr>`;
-            historyEl.appendChild(activityEl);
+            historyEl.insertBefore(activityEl, historyEl.firstChild);
+
+            //    historyEl.appendChild(activityEl);
             }
             if (activityData.type === 'Diet') {
                 activityEl.innerHTML = `
@@ -141,7 +149,9 @@ class History {
                     <p>${activityData.notes || ''}</p>
                 </div>
                 <hr>`;
-            historyEl.appendChild(activityEl);
+            //historyEl.appendChild(activityEl);
+            historyEl.insertBefore(activityEl, historyEl.firstChild);
+
             }
         }
     }
