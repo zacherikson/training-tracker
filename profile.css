@@ -53,6 +53,9 @@ button:hover {
             border-radius: 1rem;
         }
     }
+    p {
+        margin-top: 5px;
+    }
     .whichGoals {
         flex: 5;
         text-align: left;
@@ -73,6 +76,14 @@ button:hover {
         padding-bottom: 1rem;
     }
     
+}
+
+.smallGoalTitle {
+    display: flex;
+    justify-content:center;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 5rem;
 }
 
 footer {
