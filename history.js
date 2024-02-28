@@ -27,7 +27,6 @@ class History {
 
     showActivities() {
         const activities = this.getActivities();
-        console.log(activities);
         const historyEl = document.getElementById('activities'); 
         historyEl.innerHTML = ''; 
         if (activities.length === 0) {
