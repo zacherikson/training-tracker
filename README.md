@@ -25,6 +25,33 @@ Displayed here is a user uploading a run.
 - WebSocket data:
   - Users comment on each other's activities.
 
+### JavaScript Deliverable
+1. 20% JavaScript support for future login.
+  - Login page uses a login() function and stores the username to localStorage
+2. 20% JavaScript support for future database data.
+  - Uploading workouts are stored in localStorage for now and can be seen on the History page
+3. 20% JavaScript support for future WebSocket.
+  - Uploading workouts notifies other users and yourself that you just worked out as seen in the left sidebar
+4. 40% JavaScript support for your application's interaction logic.
+  - Setting Goals on the Goals page alters the right sidebar. Uploading workouts with proper data will help the user reach their goals. 
+
+### CSS Deliverable
+I created a main.css file and specific .css files for my login, workout, history, profile, and founder pages. 
+
+1. 30% Header, footer, and main content body
+  - Header: Title of website
+  - Footer: At bottom, contains link to founder page and GitHub
+  - main: three sections: friends, whatever page its on, and weekly goals
+2. 20% Navigation elements
+  - Middle menu bar with links to the workout, history, and profile pages
+3. 10% Responsive to window resizing
+  - Utilized flex elements 
+4. 20% Application elements
+  - Buttons and links are a darker blue when hovered over, etc.
+5. 10% Application text content
+  - Placed text within div elements and spaced them evenly throughout the pages
+6. 10% Application images
+  - Founder page at bottom has a big picture centered in the middle of the page. 
 
 ### HTML Deliverable
 1. 20% HTML pages for each component of your application 
@@ -46,20 +73,3 @@ Displayed here is a user uploading a run.
 9. 10% WebSocket data placeholder showing where realtime communication will go
 - Friend updates on the left of most pages
 
-### CSS Deliverable
-I created a main.css file and specific .css files for my login, workout, history, profile, and founder pages. 
-
-1. 30% Header, footer, and main content body
-  - Header: Title of website
-  - Footer: At bottom, contains link to founder page and GitHub
-  - main: three sections: friends, whatever page its on, and weekly goals
-2. 20% Navigation elements
-  - Middle menu bar with links to the workout, history, and profile pages
-3. 10% Responsive to window resizing
-  - Utilized flex elements 
-4. 20% Application elements
-  - Buttons and links are a darker blue when hovered over, etc.
-5. 10% Application text content
-  - Placed text within div elements and spaced them evenly throughout the pages
-6. 10% Application images
-  - Founder page at bottom has a big picture centered in the middle of the page. 
