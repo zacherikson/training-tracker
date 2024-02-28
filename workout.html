@@ -38,9 +38,9 @@
                     <div>
                         <div class="uploadTitle"><b>Upload</b></div>
                         <div class="uploadButtons">
-                            <button name="run" onclick="workout.setupRunBikeSwimUpload(this)">Run</button>
-                            <button name="bike" onclick="workout.setupRunBikeSwimUpload(this)">Bike</button>
-                            <button name="swim" onclick="workout.setupRunBikeSwimUpload(this)">Swim</button>
+                            <button name="run" onclick="workout.setupRunUpload(this)">Run</button>
+                            <button name="bike" onclick="workout.setupBikeUpload(this)">Bike</button>
+                            <button name="swim" onclick="workout.setupSwimUpload(this)">Swim</button>
                             <button name="gym" onclick="workout.setupGymUpload(this)">Gym</button>
                             <button name="diet" onclick="workout.setupDietUpload(this)">Diet</button>
                         </div>
@@ -51,10 +51,10 @@
                                 <div id="timeActivity"><b>Time</b><input type="text" id="time" name="time"></div>
                                 <div id="dietActivity"><b>Diet Rating</b><input type="text" id="diet" name="diet"></div>
                             </div>
-                            <div class="notesActivity"><b>Notes</b><textarea type="text" rows="15"></textarea></div>
+                            <div class="notesActivity"><b>Notes</b><textarea type="text" id="note" rows="15"></textarea></div>
                         </div>
                         <div id="uploadContainer">
-                            <button>Upload</button>
+                            <button onclick="workout.upload(this)">Upload</button>
                         </div>
                     </div>
                 </div>
