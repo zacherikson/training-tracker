@@ -108,6 +108,7 @@
   .partsOfPage {
     display:flex;
     flex-direction: row;
+    margin-bottom: 55px;
     .friends {
         flex: 2;
         background-color: lightgrey;
@@ -174,9 +175,9 @@
     text-decoration: none;
     font-size: 17px;
     width: 100%;
-    height: 4rem; 
-    position: absolute;
-    bottom: 0;
+    position:fixed;
+    bottom:0;
+    height: 3rem;
     a {
         float: left;
         color: white;
@@ -192,4 +193,8 @@
     GitHub {
         float: right;
     }
+  }
+
+  .footerSpace {
+    height: 60px;
   }

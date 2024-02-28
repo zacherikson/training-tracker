@@ -72,3 +72,13 @@ button:hover {
         padding-bottom: 1rem;
     }
 }
+
+footer {
+    position:fixed;
+    bottom:0;
+    /* position: relative;
+    margin-top: -4rem;
+    height: 4rem; 
+    clear: both;
+    margin-bottom: 0; */
+}
