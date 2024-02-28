@@ -174,7 +174,7 @@ const workout = new Workout();
 //     chatText.innerHTML;
 // }, 5000);
 setInterval(() => {
-    const updateText = `Gerald just uploaded a Run!`;
+    const updateText = `Michael Jackson just uploaded a Run!`;
     const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
     friendUpdates.unshift(updateText);
     localStorage.setItem('friendUpdates', JSON.stringify(friendUpdates));
