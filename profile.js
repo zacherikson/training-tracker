@@ -1,6 +1,7 @@
 class Goals {
     constructor() {
         this.updateWeeklyGoals();
+        //this.displayGoals();
     }
 
     runGoalUpload() {
@@ -27,6 +28,40 @@ class Goals {
         let dietGoal = document.getElementById('diet-goal').value;
         localStorage.setItem('dietGoal', dietGoal);
         this.updateWeeklyGoals();
+    }
+
+    displayGoals() {
+        console.log(document.getElementById('goal-run').checked);
+        if (document.getElementById('goal-run').checked){
+            document.getElementById('firstGoal').style.display = '';
+        } else {
+            document.getElementById('firstGoal').style.display = 'none';
+        }
+
+        if (document.getElementById('goal-bike').checked){
+            document.getElementById('secondGoal').style.display = '';
+        } else {
+            document.getElementById('secondGoal').style.display = 'none';
+        }
+
+        if (document.getElementById('goal-swim').checked){
+            document.getElementById('thirdGoal').style.display = '';
+        } else {
+            document.getElementById('thirdGoal').style.display = 'none';
+        }
+
+        if (document.getElementById('goal-gym').checked){
+            document.getElementById('fourthGoal').style.display = '';
+        } else {
+            document.getElementById('fourthGoal').style.display = 'none';
+        }
+
+        if (document.getElementById('goal-diet').checked){
+            document.getElementById('fifthGoal').style.display = '';
+        } else {
+            document.getElementById('fifthGoal').style.display = 'none';
+        }
+       
     }
 
     updateWeeklyGoals() {

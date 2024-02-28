@@ -53,57 +53,57 @@
                         <p><input type="text" id="diet-goal" placeholder=" Enter diet goal">
                             <button onclick="goal.dietGoalUpload(this)">Set Goal</button></p>
                     </div>
-                    <div class="invisible"></div>
-                    <div class="whichGoals">
+                    <!-- <div class="invisible"></div> -->
+                    <!-- <div class="whichGoals">
                         <p><b>Select which goals will be displayed publicly:</b></p>
                         <form>
-                            <input type="checkbox" id="goal-run" name="goal" value="Run">
+                            <input type="checkbox" id="goal-run" name="goal" value="Run" checked>
                             <label for="goal-run">Run</label><br>
                         
-                            <input type="checkbox" id="goal-bike" name="goal" value="Bike">
+                            <input type="checkbox" checked id="goal-bike" name="goal" value="Bike" onchange="goal.displayGoals(this)">
                             <label for="goal-bike">Bike</label><br>
                         
-                            <input type="checkbox" id="goal-swim" name="goal" value="Swim">
+                            <input type="checkbox" checked id="goal-swim" name="goal" value="Swim" onchange="goal.displayGoals(this)">
                             <label for="goal-swim">Swim</label><br>
                         
-                            <input type="checkbox" id="goal-gym" name="goal" value="Gym">
+                            <input type="checkbox" checked id="goal-gym" name="goal" value="Gym" onchange="goal.displayGoals(this)">
                             <label for="goal-gym">Gym</label><br>
                         
-                            <input type="checkbox" id="goal-diet" name="goal" value="Diet">
+                            <input type="checkbox" checked id="goal-diet" name="goal" value="Diet" onchange="goal.displayGoals(this)">
                             <label for="goal-diet">Diet</label><br>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
             <div class="goal-list">
                 <h3>Weekly Goals</h3>
                 <div class="goalElements">
-                    <div class="firstGoal">
+                    <div id="firstGoal">
                         <p><b>Running Miles</b></p>
                         <label for="run"></label>
                         <progress id="run" value="0" max="0"> 0% </progress>
                         <p id="runNumberProgress">0/0</p>
                     </div>
-                    <div class="goal">
+                    <div id="secondGoal">
                         <p><b>Biking Minutes</b></p>
                         <label for="bike"></label>
                         <progress id="bike" value="0" max="0"> 0% </progress>
                         <p id="bikeNumberProgress">0/0</p>  
                     </div>
-                    <div class="goal">
+                    <div id="thirdGoal">
                         <p><b>Swimming Minutes</b></p>
                         <label for="swim"></label>
                         <progress id="swim" value="0" max="0"> 0% </progress>
                         <p id="swimNumberProgress">0/0</p>    
                     </div>
-                    <div class="goal">
+                    <div id="fourthGoal">
                         <p><b>Gym Minutes</b></p>
                         <label for="gym"></label>
                         <progress id="gym" value="0" max="0"> 0% </progress>
                         <p id="gymNumberProgress">0/0</p>        
                     </div>
-                    <div class="goal">
+                    <div id="fifthGoal">
                         <p><b>Diet Rating</b></p>
                         <label for="diet"></label>
                         <progress id="diet" value="0" max="0"> 0% </progress>
