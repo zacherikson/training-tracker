@@ -39,19 +39,19 @@
                     <div class="setGoals">
                         <p class="smallGoalTitle">Running Miles Goal</p>
                         <p><input type="text" id="run-goal" placeholder=" Enter running goal">
-                            <button>Set Goal</button></p>
+                            <button onclick="runGoalUpload()">Set Goal</button></p>
                         <p class="smallGoalTitle">Biking Minutes Goal</p>
                         <p><input type="text" id="bike-goal" placeholder=" Enter biking goal">
-                            <button>Set Goal</button></p>
+                            <button onclick="runBikeUpload()">Set Goal</button></p>
                         <p class="smallGoalTitle">Swimming Minutes Goal</p>
                         <p><input type="text" id="swim-goal" placeholder=" Enter swimming goal">
-                            <button>Set Goal</button></p>
+                            <button onclick="runSwimUpload()">Set Goal</button></p>
                         <p class="smallGoalTitle">Gym Minutes Goal</p>
                         <p><input type="text" id="gym-goal" placeholder=" Enter gym goal">
-                            <button>Set Goal</button></p>
+                            <button onclick="runGymUpload()">Set Goal</button></p>
                         <p class="smallGoalTitle">Diet Rating Goal</p>
                         <p><input type="text" id="diet-goal" placeholder=" Enter diet goal">
-                            <button>Set Goal</button></p>
+                            <button onclick="runDietUpload()">Set Goal</button></p>
                     </div>
                     <div class="invisible"></div>
                     <div class="whichGoals">
@@ -82,8 +82,8 @@
                     <div class="firstGoal">
                         <p><b>Running Miles</b></p>
                         <label for="run"></label>
-                        <progress id="run" value="32" max="100"> 32% </progress>
-                        <p>32/100</p>
+                        <progress id="run" value="0" max="0"> 0% </progress>
+                        <p id="numberProgress">0/0</p>
                     </div>
                     <div class="goal">
                         <p><b>Biking Minutes</b></p>
