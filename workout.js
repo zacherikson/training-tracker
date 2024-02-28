@@ -137,11 +137,6 @@ class Workout {
         this.showSuccessfulUpload();
         this.clearInputs();
     }
-
-
-    getActivities() {
-        return localStorage.getItem('activities') ?? "No activities";
-    }
 }
 
 const workout = new Workout();
