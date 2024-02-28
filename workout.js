@@ -20,9 +20,11 @@ class Workout {
     hideUploadInfo() {
         document.getElementById('activityInfo').style.display = 'none'
         document.getElementById('uploadContainer').style.display = 'none'
+        document.getElementById('successfulUpload').style.display = 'none'
     }
 
     runBikeSwimUploads() {
+        document.getElementById('successfulUpload').style.display = 'none'
         document.getElementById('activityInfo').style.display = '';
         document.getElementById('distanceActivity').style.display = '';
         document.getElementById('timeActivity').style.display = '';
@@ -55,6 +57,7 @@ class Workout {
         this.workoutType = 'Gym';
         const titleEl = document.querySelector('.titleActivity b');
         titleEl.textContent = 'Gym Title';
+        document.getElementById('successfulUpload').style.display = 'none'
         document.getElementById('activityInfo').style.display = '';
         document.getElementById('distanceActivity').style.display = 'none';
         document.getElementById('timeActivity').style.display = '';
@@ -66,11 +69,29 @@ class Workout {
         this.workoutType = 'Diet';
         const titleEl = document.querySelector('.titleActivity b');
         titleEl.textContent = 'Diet Title';
+        document.getElementById('successfulUpload').style.display = 'none'
         document.getElementById('activityInfo').style.display = '';
         document.getElementById('distanceActivity').style.display = 'none';
         document.getElementById('timeActivity').style.display = 'none';
         document.getElementById('dietActivity').style.display = '';
         document.getElementById('uploadContainer').style.display = ''
+    }
+
+    showSuccessfulUpload() {
+        document.getElementById('activityInfo').style.display = 'none';
+        document.getElementById('distanceActivity').style.display = 'none';
+        document.getElementById('timeActivity').style.display = 'none';
+        document.getElementById('dietActivity').style.display = 'none';
+        document.getElementById('uploadContainer').style.display = 'none'
+        document.getElementById('successfulUpload').style.display = ''
+    }
+
+    clearInputs() {
+        document.getElementById('title').value = '';
+        document.getElementById('distance').value = '';
+        document.getElementById('time').value = '';
+        document.getElementById('diet').value = '';
+        document.getElementById('note').value = '';
     }
 
     upload() {
@@ -112,7 +133,11 @@ class Workout {
         let history = JSON.parse(localStorage.getItem('activityData')) || [];
         history.push({activityData});
         localStorage.setItem('activities', JSON.stringify(history));
+
+        this.showSuccessfulUpload();
+        this.clearInputs();
     }
+
 
     getActivities() {
         return localStorage.getItem('activities') ?? "No activities";
