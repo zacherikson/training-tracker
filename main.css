@@ -151,25 +151,25 @@
                 margin-top: 0rem;
                 margin-bottom: 0rem;
             }
-            .firstGoal {
+            #firstGoal {
                 margin-top: 0rem;
                 margin-bottom: 1rem;
             }
-            .secondGoal {
+            #secondGoal {
                 margin-top: 1rem;
                 margin-bottom: 1rem;
             }
-            .thirdGoal {
+            #thirdGoal {
                 margin-top: 1rem;
                 margin-bottom: 1rem;
             }
-            .fourthGoal {
+            #fourthGoal {
                 margin-top: 1rem;
                 margin-bottom: 1rem;
             }
-            .fifthGoal {
+            #fifthGoal {
                 margin-top: 1rem;
-                margin-bottom: 1rem;
+                margin-bottom: 10rem;
             }
         }
     }
