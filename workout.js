@@ -144,7 +144,7 @@ class Workout {
             };
         }
         if (this.workoutType === 'Diet') {
-            let diet = document.getElementById('dietProgress').value;
+            let diet = document.getElementById('dietInput').value;
             activityData = {
                 type: this.workoutType,
                 title: title,
