@@ -108,7 +108,7 @@
   .partsOfPage {
     display:flex;
     flex-direction: row;
-    margin-bottom: 55px;
+    margin-bottom: 60px;
     .friends {
         flex: 2;
         background-color: lightgrey;
@@ -193,8 +193,4 @@
     GitHub {
         float: right;
     }
-  }
-
-  .footerSpace {
-    height: 60px;
   }

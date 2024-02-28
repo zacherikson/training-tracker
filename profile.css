@@ -63,6 +63,7 @@ button:hover {
     display:flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 60px;
     table, th, td {
         border: 1px solid;
         padding: 3px;
@@ -71,14 +72,10 @@ button:hover {
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
+    
 }
 
 footer {
     position:fixed;
     bottom:0;
-    /* position: relative;
-    margin-top: -4rem;
-    height: 4rem; 
-    clear: both;
-    margin-bottom: 0; */
 }
