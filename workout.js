@@ -2,6 +2,7 @@ class Workout {
     constructor() {
         this.updateHeadline();
         this.hideUploadInfo();
+        this.updateFriendUpdatesList();
     }
     workoutType;
 
@@ -18,9 +19,11 @@ class Workout {
     }
 
     hideUploadInfo() {
-        document.getElementById('activityInfo').style.display = 'none'
-        document.getElementById('uploadContainer').style.display = 'none'
-        document.getElementById('successfulUpload').style.display = 'none'
+        if (document.getElementById('activityInfo') !== null) {
+            document.getElementById('activityInfo').style.display = 'none'
+            document.getElementById('uploadContainer').style.display = 'none'
+            document.getElementById('successfulUpload').style.display = 'none'
+        }
     }
 
     runBikeSwimUploads() {
@@ -93,6 +96,26 @@ class Workout {
         document.getElementById('diet').value = '';
         document.getElementById('note').value = '';
     }
+    
+    updateFriendUpdatesList() {
+        const friendUpdatesEl = document.querySelector('.friendUpdates');
+        friendUpdatesEl.innerHTML = ''; 
+        const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
+        friendUpdates.forEach(updateText => {
+            const updateEl = document.createElement('li');
+            updateEl.className = 'updateActivity';
+            updateEl.textContent = updateText;
+            friendUpdatesEl.appendChild(updateEl);
+        });
+    }
+
+    friendUpdate(activity) {
+        const updateText = `${localStorage.getItem('userName')} just uploaded a ${activity.type}!`;
+        const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
+        friendUpdates.unshift(updateText);
+        localStorage.setItem('friendUpdates', JSON.stringify(friendUpdates));
+        this.updateFriendUpdatesList();
+    }
 
     upload() {
         let title = document.getElementById('title').value;
@@ -138,18 +161,22 @@ class Workout {
         this.friendUpdate(activityData);
         this.clearInputs();
     }
-
-    friendUpdate(activity) {
-        const friendUpdatesEl = document.querySelector('.friendUpdates');
-        const updateEl = document.createElement('div');
-        updateEl.className = 'updateActivity';
-        updateEl.innerHTML = `
-        <div class="updateActivity">
-            <li>${localStorage.getItem('userName')} just uploaded a ${activity.type}!</li>
-        </div>`;
-        friendUpdatesEl.append(updateEl);
-    }
 }
 
 const workout = new Workout();
 
+// // Simulate chat messages that will come over WebSocket
+// setInterval(() => {
+//     const updateText = `Gerald just uploaded a ${activity.type}!`;
+//     const chatText = document.querySelector('.friendUpdates');
+//     chatText.innerHTML =
+//     `<div class="event"><span class="player-event">Gerald</span> scored ${score}</div>` +
+//     chatText.innerHTML;
+// }, 5000);
+setInterval(() => {
+    const updateText = `Gerald just uploaded a Run!`;
+    const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
+    friendUpdates.unshift(updateText);
+    localStorage.setItem('friendUpdates', JSON.stringify(friendUpdates));
+    workout.updateFriendUpdatesList();
+},5000);

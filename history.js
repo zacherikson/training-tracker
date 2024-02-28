@@ -2,6 +2,7 @@ class History {
     constructor() {
         this.updateHeadline();
         this.showActivities();
+        this.updateFriendUpdatesList();
     }
 
     updateHeadline() {
@@ -10,6 +11,18 @@ class History {
           const userName = this.getUserName();
           headlineTitleEl.textContent = `${userName}'s Training Tracker`;
         }
+    }
+
+    updateFriendUpdatesList() {
+        const friendUpdatesEl = document.querySelector('.friendUpdates');
+        friendUpdatesEl.innerHTML = ''; 
+        const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
+        friendUpdates.forEach(updateText => {
+            const updateEl = document.createElement('li');
+            updateEl.className = 'updateActivity';
+            updateEl.textContent = updateText;
+            friendUpdatesEl.appendChild(updateEl);
+        });
     }
 
     getUserName() {
@@ -49,21 +62,17 @@ class History {
                             <th>Type</th>
                             <th>Distance</th>
                             <th>Time</th>
-                            <th>Diet</th>
                         </tr>
                         <tr>
                             <td>${activityData.type || 'N/A'}</td>
                             <td>${activityData.distance || 'N/A'}</td>
                             <td>${activityData.time || 'N/A'}</td>
-                            <td>${activityData.dietRating || 'N/A'}</td>
                         </tr>
                     </table>
                     <p>${activityData.notes || ''}</p>
                 </div>
                 <hr>`;
-            //historyEl.appendChild(activityEl);
             historyEl.insertBefore(activityEl, historyEl.firstChild);
-
             }
             if (activityData.type === 'Bike') {
                 activityEl.innerHTML = `
@@ -84,7 +93,6 @@ class History {
                     <p>${activityData.notes || ''}</p>
                 </div>
                 <hr>`;
-            //historyEl.appendChild(activityEl);
             historyEl.insertBefore(activityEl, historyEl.firstChild);
 
             }
@@ -107,7 +115,6 @@ class History {
                     <p>${activityData.notes || ''}</p>
                 </div>
                 <hr>`;
-            //historyEl.appendChild(activityEl);
             historyEl.insertBefore(activityEl, historyEl.firstChild);
 
             }
@@ -129,8 +136,6 @@ class History {
                 </div>
                 <hr>`;
             historyEl.insertBefore(activityEl, historyEl.firstChild);
-
-            //    historyEl.appendChild(activityEl);
             }
             if (activityData.type === 'Diet') {
                 activityEl.innerHTML = `
@@ -149,9 +154,7 @@ class History {
                     <p>${activityData.notes || ''}</p>
                 </div>
                 <hr>`;
-            //historyEl.appendChild(activityEl);
             historyEl.insertBefore(activityEl, historyEl.firstChild);
-
             }
         }
     }

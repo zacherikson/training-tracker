@@ -1,6 +1,19 @@
 class Goals {
     constructor() {
         this.updateWeeklyGoals();
+        this.updateFriendUpdatesList();
+    }
+
+    updateFriendUpdatesList() {
+        const friendUpdatesEl = document.querySelector('.friendUpdates');
+        friendUpdatesEl.innerHTML = ''; 
+        const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
+        friendUpdates.forEach(updateText => {
+            const updateEl = document.createElement('li');
+            updateEl.className = 'updateActivity';
+            updateEl.textContent = updateText;
+            friendUpdatesEl.appendChild(updateEl);
+        });
     }
 
     runGoalUpload() {
@@ -69,7 +82,6 @@ class Goals {
         }
         if (i > 0) {
             dietAverage = (dietTotal / i).toFixed(1);
-            console.log(dietAverage);
         }
 
         let maxRun = localStorage.getItem('runGoal');
