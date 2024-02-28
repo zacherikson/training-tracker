@@ -114,9 +114,9 @@ class Goals {
         }
         let maxDiet = localStorage.getItem('dietGoal');
         if(maxDiet) {
-            document.getElementById('diet').max = maxDiet;
-            document.getElementById('diet').value = dietAverage;
-            document.getElementById('diet').textContent = maxDiet + '%';
+            document.getElementById('dietProgress').max = maxDiet;
+            document.getElementById('dietProgress').value = dietAverage;
+            document.getElementById('dietProgress').textContent = maxDiet + '%';
             document.getElementById('dietNumberProgress').textContent = dietAverage + '/' + maxDiet;
         }
     }

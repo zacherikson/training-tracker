@@ -165,14 +165,6 @@ class Workout {
 
 const workout = new Workout();
 
-// // Simulate chat messages that will come over WebSocket
-// setInterval(() => {
-//     const updateText = `Gerald just uploaded a ${activity.type}!`;
-//     const chatText = document.querySelector('.friendUpdates');
-//     chatText.innerHTML =
-//     `<div class="event"><span class="player-event">Gerald</span> scored ${score}</div>` +
-//     chatText.innerHTML;
-// }, 5000);
 setInterval(() => {
     const updateText = `Michael Jackson just uploaded a Run!`;
     const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
