@@ -39,19 +39,19 @@
                     <div class="setGoals">
                         <p class="smallGoalTitle">Running Miles Goal</p>
                         <p><input type="text" id="run-goal" placeholder=" Enter running goal">
-                            <button onclick="runGoalUpload()">Set Goal</button></p>
+                            <button onclick="goal.runGoalUpload(this)">Set Goal</button></p>
                         <p class="smallGoalTitle">Biking Minutes Goal</p>
                         <p><input type="text" id="bike-goal" placeholder=" Enter biking goal">
-                            <button onclick="runBikeUpload()">Set Goal</button></p>
+                            <button onclick="goal.bikeGoalUpload(this)">Set Goal</button></p>
                         <p class="smallGoalTitle">Swimming Minutes Goal</p>
                         <p><input type="text" id="swim-goal" placeholder=" Enter swimming goal">
-                            <button onclick="runSwimUpload()">Set Goal</button></p>
+                            <button onclick="goal.swimGoalUpload(this)">Set Goal</button></p>
                         <p class="smallGoalTitle">Gym Minutes Goal</p>
                         <p><input type="text" id="gym-goal" placeholder=" Enter gym goal">
-                            <button onclick="runGymUpload()">Set Goal</button></p>
+                            <button onclick="goal.gymGoalUpload(this)">Set Goal</button></p>
                         <p class="smallGoalTitle">Diet Rating Goal</p>
                         <p><input type="text" id="diet-goal" placeholder=" Enter diet goal">
-                            <button onclick="runDietUpload()">Set Goal</button></p>
+                            <button onclick="goal.dietGoalUpload(this)">Set Goal</button></p>
                     </div>
                     <div class="invisible"></div>
                     <div class="whichGoals">
@@ -83,31 +83,31 @@
                         <p><b>Running Miles</b></p>
                         <label for="run"></label>
                         <progress id="run" value="0" max="0"> 0% </progress>
-                        <p id="numberProgress">0/0</p>
+                        <p id="runNumberProgress">0/0</p>
                     </div>
                     <div class="goal">
                         <p><b>Biking Minutes</b></p>
                         <label for="bike"></label>
-                        <progress id="bike" value="80" max="100"> 80% </progress>
-                        <p>80/100</p>  
+                        <progress id="bike" value="0" max="0"> 0% </progress>
+                        <p id="bikeNumberProgress">0/0</p>  
                     </div>
                     <div class="goal">
                         <p><b>Swimming Minutes</b></p>
                         <label for="swim"></label>
-                        <progress id="swim" value="0" max="100"> 0% </progress>
-                        <p>0/100</p>    
+                        <progress id="swim" value="0" max="0"> 0% </progress>
+                        <p id="swimNumberProgress">0/0</p>    
                     </div>
                     <div class="goal">
                         <p><b>Gym Minutes</b></p>
                         <label for="gym"></label>
-                        <progress id="gym" value="25" max="100"> 25% </progress>
-                        <p>25/100</p>        
+                        <progress id="gym" value="0" max="0"> 0% </progress>
+                        <p id="gymNumberProgress">0/0</p>        
                     </div>
                     <div class="goal">
                         <p><b>Diet Rating</b></p>
                         <label for="diet"></label>
-                        <progress id="diet" value="8.7" max="10"> 87% </progress>
-                        <p>8.7/10</p>
+                        <progress id="diet" value="0" max="0"> 0% </progress>
+                        <p id="dietNumberProgress">0/0</p>
                     </div>
                 </div>
             </div>
@@ -116,6 +116,6 @@
             <div><a href="founder.html">Created by Zach Erikson</a></div>
             <div class="GitHub"><a href="https://github.com/zacherikson/training-tracker">GitHub</a></div>
         </footer>
-        <script> src="profile.js"</script>
+        <script src="profile.js"></script>
     </body>
 </html>
