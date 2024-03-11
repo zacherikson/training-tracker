@@ -14,15 +14,15 @@ app.use(express.static('public'));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// GetScores
-apiRouter.get('/scores', (_req, res) => {
-  res.send(communityWorkouts);
+// GetWorkouts
+apiRouter.get('/workouts', (_req, res) => {
+  res.send(workouts);
 });
 
-// SubmitScore
-apiRouter.post('/score', (req, res) => {
-    communityWorkouts = updateScores(req.body, communityWorkouts);
-  res.send(communityWorkouts);
+// SubmitWorkout
+apiRouter.post('/workout', (req, res) => {
+    workouts = updateWorkouts(req.body, workouts);
+  res.send(workouts);
 });
 
 // Return the application's default page if the path is unknown
@@ -34,26 +34,9 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-// updateScores considers a new score for inclusion in the high scores.
-// The high scores are saved in memory and disappear whenever the service is restarted.
-let communityWorkouts = [];
-function updateScores(newWorkout, communityWorkouts) {
-  let found = false;
-  for (const [i, prevScore] of communityWorkouts.entries()) {
-    if (newWorkout.score > prevScore.communityWorkouts) {
-        communityWorkouts.splice(i, 0, newWorkout);
-      found = true;
-      break;
-    }
-  }
-
-  if (!found) {
-    communityWorkouts.push(newWorkout);
-  }
-
-  if (communityWorkouts.length > 10) {
-    communityWorkouts.length = 10;
-  }
-
-  return communityWorkouts;
+// The workouts are saved in memory and disappear whenever the service is restarted.
+let workouts = [];
+function updateWorkouts(newWorkout, workouts) {
+    workouts.push(newWorkout);
+    return workouts;
 }
