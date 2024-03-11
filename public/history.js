@@ -1,7 +1,7 @@
 class History {
     constructor() {
         this.updateHeadline();
-        this.showActivities();
+        this.loadWorkouts();
         this.updateFriendUpdatesList();
     }
 
@@ -40,8 +40,28 @@ class History {
         }
     }
 
-    showActivities() {
-        const activities = this.getActivities();
+    async loadWorkouts() {
+        let workouts = [];
+        try {
+          // Get the latest high scores from the service
+          const response = await fetch('/api/workouts');
+          workouts = await response.json();
+      
+          // Save the scores in case we go offline in the future
+          localStorage.setItem('activities', JSON.stringify(workouts));
+        } catch {
+          // If there was an error then just use the last saved scores
+            const activitiesString = localStorage.getItem('activities');
+            if (activitiesString) {
+                return JSON.parse(activitiesString);
+            } else {
+                return [];
+            }
+        }
+        this.showActivities(workouts);
+    }
+
+    showActivities(activities) {
         const historyEl = document.getElementById('activities'); 
         historyEl.innerHTML = ''; 
         if (activities.length === 0) {
