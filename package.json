@@ -1,0 +1,15 @@
+{
+  "name": "training-tracker",
+  "version": "1.0.0",
+  "description": "Do you ever wish that it were easier to stay motivated about exercising? The Training Tracker application excites and motivates the user to pursue their fitness goals. Uploading workouts, setting personlized goals, receiving the support of an uplifting community will all help you become the type of person you want to be. Whether you're a seasoned athlete or just starting, Training Tracker will be your dedicated companion in your quest for a healthier lifestyle.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
