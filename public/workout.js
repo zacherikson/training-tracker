@@ -96,6 +96,7 @@ class Workout {
         document.getElementById('dietInput').value = '';
         document.getElementById('note').value = '';
     }
+
     
     updateFriendUpdatesList() {
         const friendUpdatesEl = document.querySelector('.friendUpdates');
@@ -119,16 +120,19 @@ class Workout {
         this.updateFriendUpdatesList();
     }
 
-    upload() {
+    async saveUpload() {
+        const userName = this.getUserName();
+        const date = new Date().toLocaleDateString();
         let title = document.getElementById('title').value;
         let notes = document.getElementById('note').value; 
         let activityData = {}
-
         if (this.workoutType === 'Run' || this.workoutType === 'Bike' ||
         this.workoutType === 'Swim') {
             let distance = document.getElementById('distance').value;
             let time = document.getElementById('time').value;
             activityData = {
+                name: userName,
+                date: date,
                 type: this.workoutType,
                 title: title,
                 distance: distance,
@@ -139,6 +143,8 @@ class Workout {
         if (this.workoutType === 'Gym'){
             let time = document.getElementById('time').value;
             activityData = {
+                name: userName,
+                date: date,
                 type: this.workoutType,
                 title: title,
                 time: time,
@@ -148,13 +154,38 @@ class Workout {
         if (this.workoutType === 'Diet') {
             let diet = document.getElementById('dietInput').value;
             activityData = {
+                name: userName,
+                date: date,
                 type: this.workoutType,
                 title: title,
                 dietRating: diet,
                 notes: notes
             };
         }
+            
+        try {
+          const response = await fetch('/api/workout', {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(activityData),
+        });
 
+        const workouts = await response.json();
+        localStorage.setItem('activities', JSON.stringify(workouts));
+
+        this.showSuccessfulUpload();
+        this.friendUpdate(activityData);
+        this.clearInputs();
+
+        // Store what the service gave us as the workouts
+        localStorage.setItem('activities', JSON.stringify(workouts));
+        } catch {
+          // If there was an error then just track workouts locally
+          this.upload(activityData);
+        }
+    }
+
+    upload(activityData) {
         let history = JSON.parse(localStorage.getItem('activities')) || [];
         history.push({activityData});
         localStorage.setItem('activities', JSON.stringify(history));
