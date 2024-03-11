@@ -52,7 +52,7 @@ class Goals {
         let dietAverage = 0;
         let dietTotal = 0
         let i = 0;
-        const activities = JSON.parse(localStorage.getItem('activities'));
+        const activities = JSON.parse(localStorage.getItem('activities')) || [];
         for (const activity in activities) {
             let activityData = activities[activity].activityData;
             if (activityData.type === 'Run') {
