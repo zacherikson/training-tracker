@@ -15,12 +15,18 @@ img {
     padding-bottom: 1rem;
 }
 
-.ogQuote{
+.myQuote {
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+#ogQuote{
     text-align: center;
     padding-bottom: 10px;
 }
 
 .signature {
+    font-size: 1.5rem;
     text-align: right;
     padding-bottom: 10px;
 }
