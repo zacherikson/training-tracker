@@ -8,12 +8,14 @@ class Goals {
         const friendUpdatesEl = document.querySelector('.friendUpdates');
         friendUpdatesEl.innerHTML = ''; 
         const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
-        friendUpdates.forEach(updateText => {
+        for (let i = 0; i < friendUpdates.length && i < 25; i++) {
+            const updateText = friendUpdates[i];
             const updateEl = document.createElement('li');
             updateEl.className = 'updateActivity';
             updateEl.textContent = updateText;
             friendUpdatesEl.appendChild(updateEl);
-        });
+            i++;
+        }
     }
 
     runGoalUpload() {

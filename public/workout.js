@@ -101,7 +101,7 @@ class Workout {
         const friendUpdatesEl = document.querySelector('.friendUpdates');
         friendUpdatesEl.innerHTML = ''; 
         const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
-        for (let i = 0; i < friendUpdates.length && i < 20; i++) {
+        for (let i = 0; i < friendUpdates.length && i < 25; i++) {
             const updateText = friendUpdates[i];
             const updateEl = document.createElement('li');
             updateEl.className = 'updateActivity';
