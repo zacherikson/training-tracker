@@ -19,6 +19,51 @@ apiRouter.get('/workouts', (_req, res) => {
   res.send(workouts);
 });
 
+// GetRunGoal
+apiRouter.get('/runGoals', (_req, res) => {
+    if (runGoal === ''){
+        res.send('0');
+    } else {
+        res.send(runGoal);
+    }
+});
+
+// GetBikeGoal
+apiRouter.get('/bikeGoals', (_req, res) => {
+    if (bikeGoal === ''){
+        res.send('0');
+    } else {
+        res.send(bikeGoal);
+    }
+});
+
+// GetSwimGoal
+apiRouter.get('/swimGoals', (_req, res) => {
+    if (swimGoal === ''){
+        res.send('0');
+    } else {
+        res.send(swimGoal);
+    }
+});
+
+// GetGymGoal
+apiRouter.get('/gymGoals', (_req, res) => {
+    if (gymGoal === ''){
+        res.send('0');
+    } else {
+        res.send(gymGoal);
+    }
+});
+
+// GetDietGoal
+apiRouter.get('/dietGoals', (_req, res) => {
+    if (dietGoal === ''){
+        res.send('0');
+    } else {
+        res.send(dietGoal);
+    }
+});
+
 // SubmitWorkout
 apiRouter.post('/workout', (req, res) => {
     workouts = updateWorkouts(req.body, workouts);

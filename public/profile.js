@@ -148,35 +148,79 @@ class Goals {
             dietAverage = (dietTotal / i).toFixed(1);
         }
 
-        let maxRun = localStorage.getItem('runGoal');
+        let maxRun = '';
+        try {
+            const response = await fetch('/api/runGoals');
+            maxRun = await response.json();
+            localStorage.setItem("runGoal",maxRun);
+        } catch (error) {
+            console.error('Error:', error);
+            maxRun = localStorage.getItem('runGoal');
+        }
         if(maxRun) {
             document.getElementById('run').max = maxRun;
             document.getElementById('run').value = runTotal;
             document.getElementById('run').textContent = maxRun + '%';
             document.getElementById('runNumberProgress').textContent = runTotal + '/' + maxRun;
         }
-        let maxBike = localStorage.getItem('bikeGoal');
+        
+        let maxBike = '';
+        try {
+            const response = await fetch('/api/bikeGoals');
+            maxBike = await response.json();
+            localStorage.setItem("bikeGoal",maxBike);
+        } catch (error) {
+            console.error('Error:', error);
+            maxBike = localStorage.getItem('bikeGoal');
+        }
         if(maxBike) {
             document.getElementById('bike').max = maxBike;
             document.getElementById('bike').value = bikeTotal;
             document.getElementById('bike').textContent = maxBike + '%';
             document.getElementById('bikeNumberProgress').textContent = bikeTotal + '/' + maxBike;
         }
-        let maxSwim = localStorage.getItem('swimGoal');
+
+        let maxSwim = '';
+        try {
+            const response = await fetch('/api/swimGoals');
+            maxSwim = await response.json();
+            localStorage.setItem("swimGoal",maxSwim);
+        } catch (error) {
+            console.error('Error:', error);
+            maxSwim = localStorage.getItem('swimGoal');
+        }
         if(maxSwim) {
             document.getElementById('swim').max = maxSwim;
             document.getElementById('swim').value = swimTotal;
             document.getElementById('swim').textContent = maxSwim + '%';
             document.getElementById('swimNumberProgress').textContent = swimTotal + '/' + maxSwim;
         }
-        let maxGym = localStorage.getItem('gymGoal');
+
+        let maxGym = '';
+        try {
+            const response = await fetch('/api/gymGoals');
+            maxGym = await response.json();
+            localStorage.setItem("gymGoal",maxGym);
+        } catch (error) {
+            console.error('Error:', error);
+            maxGym = localStorage.getItem('gymGoal');
+        } 
         if(maxGym) {
             document.getElementById('gym').max = maxGym;
             document.getElementById('gym').value = gymTotal;
             document.getElementById('gym').textContent = maxGym + '%';
             document.getElementById('gymNumberProgress').textContent = gymTotal + '/' + maxGym;
         }
-        let maxDiet = localStorage.getItem('dietGoal');
+
+        let maxDiet = '';
+        try {
+            const response = await fetch('/api/dietGoals');
+            maxDiet = await response.json();
+            localStorage.setItem("dietGoal",maxDiet);
+        } catch (error) {
+            console.error('Error:', error);
+            maxDiet = localStorage.getItem('dietGoal');
+        }
         if(maxDiet) {
             document.getElementById('dietProgress').max = maxDiet;
             document.getElementById('dietProgress').value = dietAverage;
