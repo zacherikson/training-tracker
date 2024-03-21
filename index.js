@@ -26,9 +26,34 @@ apiRouter.post('/workout', (req, res) => {
 });
 
 // SubmitGoal
+let runGoal = '';
 apiRouter.post('/runGoal', (req, res) => {
     runGoal = req.body.runGoal;
     res.send(runGoal);
+});
+
+let bikeGoal = '';
+apiRouter.post('/bikeGoal', (req, res) => {
+    bikeGoal = req.body.bikeGoal;
+    res.send(bikeGoal);
+});
+
+let swimGoal = '';
+apiRouter.post('/swimGoal', (req, res) => {
+    swimGoal = req.body.swimGoal;
+    res.send(swimGoal);
+});
+
+let gymGoal = '';
+apiRouter.post('/gymGoal', (req, res) => {
+    gymGoal = req.body.gymGoal;
+    res.send(gymGoal);
+});
+
+let dietGoal = '';
+apiRouter.post('/dietGoal', (req, res) => {
+    dietGoal = req.body.dietGoal;
+    res.send(dietGoal);
 });
 
 // Return the application's default page if the path is unknown
@@ -46,9 +71,4 @@ function updateWorkouts(newWorkout, workouts) {
     workouts.push(newWorkout);
     return workouts;
 }
-
-let runGoal = 0;
-// function updateRunGoal(newRunGoal) {
-//     runGoal = newRunGoal;
-// }
 

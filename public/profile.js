@@ -20,33 +20,83 @@ class Goals {
           });
   
         const newRunGoal = await response.json();
-        console.log(newRunGoal);
         localStorage.setItem('runGoal', JSON.stringify(newRunGoal));
-        } catch {
-            console.log("fail");
+        } catch (error) {
+            console.error('Error:', error);
             localStorage.setItem('runGoal', runGoalValue);
         }
-        
         this.updateWeeklyGoals();
     }
-    bikeGoalUpload() {
-        let bikeGoal = document.getElementById('bike-goal').value;
-        localStorage.setItem('bikeGoal', bikeGoal);
+    async bikeGoalUpload() {
+        let bikeGoalValue = document.getElementById('bike-goal').value;
+        let bikeGoalObject = { bikeGoal: bikeGoalValue };
+        try {
+            const response = await fetch('/api/bikeGoal', {
+              method: 'POST',
+              headers: {'content-type': 'application/json'},
+              body: JSON.stringify(bikeGoalObject),
+          });
+  
+        const newBikeGoal = await response.json();
+        localStorage.setItem('bikeGoal', JSON.stringify(newBikeGoal));
+        } catch (error) {
+            console.error('Error:', error);
+            localStorage.setItem('bikeGoal', bikeGoalValue);
+        }
         this.updateWeeklyGoals();
     }
-    swimGoalUpload() {
-        let swimGoal = document.getElementById('swim-goal').value;
-        localStorage.setItem('swimGoal', swimGoal);
+    async swimGoalUpload() {
+        let swimGoalValue = document.getElementById('swim-goal').value;
+        let swimGoalObject = { swimGoal: swimGoalValue };
+        try {
+            const response = await fetch('/api/swimGoal', {
+              method: 'POST',
+              headers: {'content-type': 'application/json'},
+              body: JSON.stringify(swimGoalObject),
+          });
+  
+        const newSwimGoal = await response.json();
+        localStorage.setItem('swimGoal', JSON.stringify(newSwimGoal));
+        } catch (error) {
+            console.error('Error:', error);
+            localStorage.setItem('swimGoal', swimGoalValue);
+        }
         this.updateWeeklyGoals();
     }
-    gymGoalUpload() {
-        let gymGoal = document.getElementById('gym-goal').value;
-        localStorage.setItem('gymGoal', gymGoal);
+    async gymGoalUpload() {
+        let gymGoalValue = document.getElementById('gym-goal').value;
+        let gymGoalObject = { gymGoal: gymGoalValue };
+        try {
+            const response = await fetch('/api/gymGoal', {
+              method: 'POST',
+              headers: {'content-type': 'application/json'},
+              body: JSON.stringify(gymGoalObject),
+          });
+  
+        const newGymGoal = await response.json();
+        localStorage.setItem('gymGoal', JSON.stringify(newGymGoal));
+        } catch (error) {
+            console.error('Error:', error);
+            localStorage.setItem('gymGoal', gymGoalValue);
+        }
         this.updateWeeklyGoals();
     }
-    dietGoalUpload() {
-        let dietGoal = document.getElementById('diet-goal').value;
-        localStorage.setItem('dietGoal', dietGoal);
+    async dietGoalUpload() {
+        let dietGoalValue = document.getElementById('diet-goal').value;
+        let dietGoalObject = { dietGoal: dietGoalValue };
+        try {
+            const response = await fetch('/api/dietGoal', {
+              method: 'POST',
+              headers: {'content-type': 'application/json'},
+              body: JSON.stringify(dietGoalObject),
+          });
+  
+        const newDietGoal = await response.json();
+        localStorage.setItem('dietGoal', JSON.stringify(newDietGoal));
+        } catch (error) {
+            console.error('Error:', error);
+            localStorage.setItem('dietGoal', dietGoalValue);
+        }
         this.updateWeeklyGoals();
     }
 
