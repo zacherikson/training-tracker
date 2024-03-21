@@ -10,18 +10,21 @@ class Goals {
     }
 
     async runGoalUpload() {
-        let runGoal = document.getElementById('run-goal').value;
+        let runGoalValue = document.getElementById('run-goal').value;
+        let runGoalObject = { runGoal: runGoalValue };
         try {
             const response = await fetch('/api/runGoal', {
               method: 'POST',
               headers: {'content-type': 'application/json'},
-              body: JSON.stringify(runGoal),
+              body: JSON.stringify(runGoalObject),
           });
   
         const newRunGoal = await response.json();
-        localStorage.setItem('runGoal', newRunGoal);
+        console.log(newRunGoal);
+        localStorage.setItem('runGoal', JSON.stringify(newRunGoal));
         } catch {
-            localStorage.setItem('runGoal', runGoal);
+            console.log("fail");
+            localStorage.setItem('runGoal', runGoalValue);
         }
         
         this.updateWeeklyGoals();

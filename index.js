@@ -27,15 +27,9 @@ apiRouter.post('/workout', (req, res) => {
 
 // SubmitGoal
 apiRouter.post('/runGoal', (req, res) => {
-    runGoal = updateRunGoal(req.body, runGoal);
-  res.send(runGoal);
+    runGoal = req.body.runGoal;
+    res.send(runGoal);
 });
-
-// // SubmitWorkout
-// apiRouter.post('/update', (req, res) => {
-//     updates = updateWorkouts(req.body, updates);
-//   res.send(updates);
-// });
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
@@ -54,13 +48,7 @@ function updateWorkouts(newWorkout, workouts) {
 }
 
 let runGoal = 0;
-function updateRunGoal(newRunGoal, runGoal) {
-    runGoal = newRunGoal;
-    return runGoal;
-}
-
-// let updates = [];
-// function updateUpdates(newUpdate, updates) {
-//     updates.unshift(newUpdate);
-//     return updates;
+// function updateRunGoal(newRunGoal) {
+//     runGoal = newRunGoal;
 // }
+
