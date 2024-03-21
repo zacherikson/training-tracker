@@ -2,7 +2,8 @@ class Workout {
     constructor() {
         this.updateHeadline();
         this.hideUploadInfo();
-        this.updateFriendUpdatesList();
+        this.showUpdates();
+        // this.updateFriendUpdatesList();
     }
     workoutType;
 
@@ -116,11 +117,8 @@ class Workout {
     }
 
     friendUpdate(activity) {
-        const updateText = `${localStorage.getItem('userName')} just uploaded a ${activity.type}!`;
-        const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
-        friendUpdates.unshift(updateText);
-        localStorage.setItem('friendUpdates', JSON.stringify(friendUpdates));
-        this.updateFriendUpdatesList();
+        const friendUpdates = document.querySelector('#friendUpdates');
+        friendUpdates.innerHTML = `<li class="event">${localStorage.getItem('userName')} just uploaded a ${activity.type}!</li>` + friendUpdates.innerHTML;
     }
 
     async saveUpload() {
@@ -174,9 +172,7 @@ class Workout {
         });
 
         const workouts = await response.json();
-        console.log(workouts);
-        localStorage.setItem('activities', JSON.stringify(workouts));
-
+        
         this.showSuccessfulUpload();
         this.friendUpdate(activityData);
         this.clearInputs();
@@ -198,14 +194,18 @@ class Workout {
         this.friendUpdate(activityData);
         this.clearInputs();
     }
+
+    showUpdates() {
+        const friendUpdatesEl = document.querySelector('#friendUpdates');
+        friendUpdatesEl.innerHTML = localStorage.getItem('friendUpdates');
+    }
 }
 
 const workout = new Workout();
 
 setInterval(() => {
-    const updateText = `Michael Jackson just uploaded a Run!`;
-    const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
-    friendUpdates.unshift(updateText);
-    localStorage.setItem('friendUpdates', JSON.stringify(friendUpdates));
-    workout.updateFriendUpdatesList();
+    const friendUpdates = document.querySelector('#friendUpdates');
+    friendUpdates.innerHTML = `<li class="event">Michael Jackson just uploaded a Run!</li>` + friendUpdates.innerHTML;
+
+    localStorage.setItem('friendUpdates',friendUpdates.innerHTML);
 },5000);

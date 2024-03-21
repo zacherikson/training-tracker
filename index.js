@@ -25,6 +25,12 @@ apiRouter.post('/workout', (req, res) => {
   res.send(workouts);
 });
 
+// // SubmitWorkout
+// apiRouter.post('/update', (req, res) => {
+//     updates = updateWorkouts(req.body, updates);
+//   res.send(updates);
+// });
+
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
@@ -40,3 +46,9 @@ function updateWorkouts(newWorkout, workouts) {
     workouts.push(newWorkout);
     return workouts;
 }
+
+// let updates = [];
+// function updateUpdates(newUpdate, updates) {
+//     updates.unshift(newUpdate);
+//     return updates;
+// }
