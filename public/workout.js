@@ -15,7 +15,12 @@ class Workout {
     }
 
     getUserName() {
-        return localStorage.getItem('userName') ?? 'User';
+        if (localStorage.getItem('userName') === ''){
+            return localStorage.getItem('userName') ?? 'Champ';
+        } else {
+            return 'Champ';
+        }
+        
     }
 
     hideUploadInfo() {
@@ -190,4 +195,4 @@ setInterval(() => {
     friendUpdates.innerHTML = `<li class="event">Michael Jackson just uploaded a Run!</li>` + friendUpdates.innerHTML;
 
     localStorage.setItem('friendUpdates',friendUpdates.innerHTML);
-},5000);
+},10000);
