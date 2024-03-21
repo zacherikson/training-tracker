@@ -174,6 +174,7 @@ class Workout {
         });
 
         const workouts = await response.json();
+        console.log(workouts);
         localStorage.setItem('activities', JSON.stringify(workouts));
 
         this.showSuccessfulUpload();

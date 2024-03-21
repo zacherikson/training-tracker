@@ -49,17 +49,11 @@ class History {
             // Get the workouts from the service
             const response = await fetch('/api/workouts');
             workouts = await response.json();
-        
-            // Save the scores in case we go offline in the future
+            // Save the workouts in case we go offline in the future
             localStorage.setItem('activities', JSON.stringify(workouts));
         } catch {
           // If there was an error then just use the last saved scores
-            const activitiesString = localStorage.getItem('activities');
-            if (activitiesString) {
-                return JSON.parse(activitiesString);
-            } else {
-                return [];
-            }
+            workouts = this.getActivities();
         }
         this.showActivities(workouts);
     }
@@ -77,7 +71,7 @@ class History {
         for (const activity in activities) {
             const activityEl = document.createElement('div');
             activityEl.className = 'activity';
-            let activityData = activities[activity].activityData
+            let activityData = activities[activity]
             if (activityData.type === 'Run') {
                 activityEl.innerHTML = `
                 <div class="workout">
@@ -99,7 +93,7 @@ class History {
                 <hr>`;
             historyEl.insertBefore(activityEl, historyEl.firstChild);
             }
-            if (activityData.type === 'Bike') {
+            else if (activityData.type === 'Bike') {
                 activityEl.innerHTML = `
                 <div class="workout">
                     <div><b>${activityData.title}</b></div>
@@ -121,7 +115,7 @@ class History {
             historyEl.insertBefore(activityEl, historyEl.firstChild);
 
             }
-            if (activityData.type === 'Swim') {
+            else if (activityData.type === 'Swim') {
                 activityEl.innerHTML = `
                 <div class="workout">
                     <div><b>${activityData.title}</b></div>
@@ -143,7 +137,7 @@ class History {
             historyEl.insertBefore(activityEl, historyEl.firstChild);
 
             }
-            if (activityData.type === 'Gym') {
+            else if (activityData.type === 'Gym') {
                 activityEl.innerHTML = `
                 <div class="workout">
                     <div><b>${activityData.title}</b></div>
@@ -162,7 +156,7 @@ class History {
                 <hr>`;
             historyEl.insertBefore(activityEl, historyEl.firstChild);
             }
-            if (activityData.type === 'Diet') {
+            else if (activityData.type === 'Diet') {
                 activityEl.innerHTML = `
                 <div class="workout">
                     <div><b>${activityData.title}</b></div>
