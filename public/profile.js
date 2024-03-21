@@ -47,7 +47,7 @@ class Goals {
         this.updateWeeklyGoals();
     }
 
-    updateWeeklyGoals() {
+    async updateWeeklyGoals() {
         let runTotal = 0;
         let bikeTotal = 0;
         let swimTotal = 0;
@@ -55,7 +55,12 @@ class Goals {
         let dietAverage = 0;
         let dietTotal = 0
         let i = 0;
-        const activities = JSON.parse(localStorage.getItem('activities')) || [];
+        try {
+            const response = await fetch('/api/workouts');
+            workouts = await response.json();
+        } catch {
+            const activities = JSON.parse(localStorage.getItem('activities')) || [];
+        }
         for (const activity in activities) {
             let activityData = activities[activity].activityData;
             if (activityData.type === 'Run') {
