@@ -15,12 +15,7 @@ class Workout {
     }
 
     getUserName() {
-        if (localStorage.getItem('userName') === ''){
-            return localStorage.getItem('userName') ?? 'Champ';
-        } else {
-            return 'Champ';
-        }
-        
+        return localStorage.getItem('userName') ?? 'User';
     }
 
     hideUploadInfo() {
