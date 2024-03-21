@@ -1,29 +1,29 @@
 class Goals {
     constructor() {
         this.updateWeeklyGoals();
-        this.updateFriendUpdatesList();
+        this.showUpdates();
     }
 
-    updateFriendUpdatesList() {
+    showUpdates() {
         const friendUpdatesEl = document.querySelector('#friendUpdates');
-        if (friendUpdatesEl !== null) {
-            friendUpdatesEl.innerHTML = ''; 
-            const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
-            
-            for (let i = 0; i < friendUpdates.length && i < 25; i++) {
-                const updateText = friendUpdates[i];
-                const updateEl = document.createElement('li');
-                updateEl.className = 'updateActivity';
-                updateEl.textContent = updateText;
-                friendUpdatesEl.appendChild(updateEl);
-                i++;
-            }
-        }
+        friendUpdatesEl.innerHTML = localStorage.getItem('friendUpdates');
     }
 
-    runGoalUpload() {
+    async runGoalUpload() {
         let runGoal = document.getElementById('run-goal').value;
-        localStorage.setItem('runGoal', runGoal);
+        try {
+            const response = await fetch('/api/runGoal', {
+              method: 'POST',
+              headers: {'content-type': 'application/json'},
+              body: JSON.stringify(runGoal),
+          });
+  
+        const newRunGoal = await response.json();
+        localStorage.setItem('runGoal', newRunGoal);
+        } catch {
+            localStorage.setItem('runGoal', runGoal);
+        }
+        
         this.updateWeeklyGoals();
     }
     bikeGoalUpload() {
@@ -55,14 +55,15 @@ class Goals {
         let dietAverage = 0;
         let dietTotal = 0
         let i = 0;
+        let activities = []
         try {
             const response = await fetch('/api/workouts');
-            workouts = await response.json();
+            activities = await response.json();
         } catch {
-            const activities = JSON.parse(localStorage.getItem('activities')) || [];
+            activities = JSON.parse(localStorage.getItem('activities')) || [];
         }
         for (const activity in activities) {
-            let activityData = activities[activity].activityData;
+            let activityData = activities[activity];
             if (activityData.type === 'Run') {
                 if (parseFloat(activityData.distance)){
                     runTotal += parseFloat(activityData.distance);

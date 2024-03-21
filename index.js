@@ -25,6 +25,12 @@ apiRouter.post('/workout', (req, res) => {
   res.send(workouts);
 });
 
+// SubmitGoal
+apiRouter.post('/runGoal', (req, res) => {
+    runGoal = updateRunGoal(req.body, runGoal);
+  res.send(runGoal);
+});
+
 // // SubmitWorkout
 // apiRouter.post('/update', (req, res) => {
 //     updates = updateWorkouts(req.body, updates);
@@ -45,6 +51,12 @@ let workouts = [];
 function updateWorkouts(newWorkout, workouts) {
     workouts.push(newWorkout);
     return workouts;
+}
+
+let runGoal = 0;
+function updateRunGoal(newRunGoal, runGoal) {
+    runGoal = newRunGoal;
+    return runGoal;
 }
 
 // let updates = [];

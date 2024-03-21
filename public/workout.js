@@ -3,7 +3,6 @@ class Workout {
         this.updateHeadline();
         this.hideUploadInfo();
         this.showUpdates();
-        // this.updateFriendUpdatesList();
     }
     workoutType;
 
@@ -98,27 +97,10 @@ class Workout {
         document.getElementById('note').value = '';
     }
 
-    
-    updateFriendUpdatesList() {
-        const friendUpdatesEl = document.querySelector('#friendUpdates');
-        if (friendUpdatesEl !== null) {
-            friendUpdatesEl.innerHTML = ''; 
-            const friendUpdates = JSON.parse(localStorage.getItem('friendUpdates') || '[]');
-            
-            for (let i = 0; i < friendUpdates.length && i < 25; i++) {
-                const updateText = friendUpdates[i];
-                const updateEl = document.createElement('li');
-                updateEl.className = 'updateActivity';
-                updateEl.textContent = updateText;
-                friendUpdatesEl.appendChild(updateEl);
-                i++;
-            }
-        }
-    }
-
     friendUpdate(activity) {
         const friendUpdates = document.querySelector('#friendUpdates');
         friendUpdates.innerHTML = `<li class="event">${localStorage.getItem('userName')} just uploaded a ${activity.type}!</li>` + friendUpdates.innerHTML;
+        localStorage.setItem('friendUpdates',friendUpdates.innerHTML);
     }
 
     async saveUpload() {
