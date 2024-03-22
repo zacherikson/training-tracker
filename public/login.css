@@ -14,16 +14,6 @@
         margin-bottom: 1rem;
     }
 
-    form {
-        padding-bottom: 12px;
-        box-sizing: border-box;
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        label {
-            margin-bottom: 5px;
-        }
-    }
 
     button {
         background-color: hsl(223, 57%, 38%);
@@ -39,6 +29,17 @@
     }
     button:hover {
         background-color:darkblue;
+    }
+}
+
+#loginControls {
+    padding-bottom: 12px;
+    box-sizing: border-box;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    label {
+        margin-bottom: 5px;
     }
 }
 

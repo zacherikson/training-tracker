@@ -3,7 +3,6 @@
     <head>
         <link rel="stylesheet" href="main.css" />
         <link rel="stylesheet" href="login.css" />
-        <script src="login.js"></script>
     </head>
     <body>
         <header>
@@ -30,7 +29,7 @@
                     <button type="submit" onclick="login()">Login</button>
                 </form> -->
                 <!-- Displayed when needing authentication -->
-                <div id="loginControls" style="display: none">
+                <div id="loginControls" >
                     <div class="input-group mb-3">
                         <span class="input-group-text">@</span>
                         <input class="form-control" type="text" id="userName" placeholder="your@email.com" />
@@ -43,11 +42,11 @@
                     <button type="button" class="btn btn-primary" onclick="createUser()">Create</button>
                 </div>
                 <!-- Displayed when ready to play -->
-                <div id="playControls" style="display: none">
+                <!-- <div id="playControls" style="display: none">
                     <div id="playerName"></div>
                     <button type="button" class="btn btn-primary" onclick="play()">Play</button>
                     <button type="button" class="btn btn-secondary" onclick="logout()">Logout</button>
-                </div>
+                </div> -->
                 <!-- <form method="get" action="workout.html">
                     <label for="password">Password</label>
                     <input type="text" id="password" placeholder="Enter password" />
@@ -59,5 +58,6 @@
             <div><a href="founder.html">Created by Zach Erikson</a></div>
             <div class="GitHub"><a href="https://github.com/zacherikson/training-tracker">GitHub</a></div>
         </footer>
+        <script src="login.js"></script>
     </body>
 </html>
