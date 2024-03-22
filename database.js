@@ -46,12 +46,13 @@ function addWorkout(workout) {
 }
 
 function getWorkouts() {
-  const query = { workout: 1 }; //{ $gt: 0, $lt: 900 }
+  let username = localStorage.getItem('userName');
+  const query = {name: username}; //{ $gt: 0, $lt: 900 }
   // const options = {
   //   sort: { score: -1 },
   //   limit: 10,
   // };
-  const cursor = workoutCollection.find(query);//, options
+  const cursor = workoutCollection.find(query); //, options
   return cursor.toArray();
 }
 
