@@ -87,13 +87,16 @@ secureApiRouter.use(async (req, res, next) => {
 });
 
 // GetWorkouts
-secureApiRouter.get('/workouts', async (_req, res) => {
-    const workouts = await DB.getWorkouts();
+secureApiRouter.get('/workouts/:email', async (req, res) => {
+    const email = req.params.email;
+    const workouts = await DB.getWorkouts(email);
   res.send(workouts);
 });
 
 // GetRunGoal
-secureApiRouter.get('/runGoals', (_req, res) => {
+secureApiRouter.get('/runGoals/:email', (_req, res) => {
+    const email = req.params.email;
+
     if (runGoal === ''){
         res.send('0');
     } else {
@@ -143,15 +146,16 @@ secureApiRouter.post('/workout', async (req, res) => {
     await DB.addWorkout(workout);
     const workouts = await DB.getWorkouts();
   res.send(workouts);
-//     workouts = updateWorkouts(req.body, workouts);
-//   res.send(workouts);
 });
 
 // SubmitGoal
-let runGoal = '';
-secureApiRouter.post('/runGoal', (req, res) => {
-    runGoal = req.body.runGoal;
-    res.send(runGoal);
+// let runGoal = '';
+secureApiRouter.post('/runGoal/:email', async (req, res) => {
+    const runGoal = { ...req.body, ip: req.ip };
+    await DB.addRunGoal(runGoal);
+    const goal = await DB.getRunGoal();
+    // runGoal = req.body.runGoal;
+    res.send(goal);
 });
 
 let bikeGoal = '';

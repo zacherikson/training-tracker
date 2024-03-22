@@ -45,21 +45,29 @@ function addWorkout(workout) {
   workoutCollection.insertOne(workout);
 }
 
-function getWorkouts() {
-  const userName = localStorage.getItem('userName');
-  const query = {name: userName}; //{ $gt: 0, $lt: 900 }
-  // const options = {
-  //   sort: { score: -1 },
-  //   limit: 10,
-  // };
-  const cursor = workoutCollection.find(query); //, options
+function getWorkouts(email) {
+  const query = { name: email};
+  const cursor = workoutCollection.find(query);
   return cursor.toArray();
 }
 
+async function addRunGoal(goal, email) {
+  const query = { email: email }; 
+  const update = { $set: { runGoal: goal.runGoal } }; 
+  await goalCollection.updateOne(query, update);
+  // goalCollection.insertOne(goal);
+}
+
+function getRunGoal(email) {
+  const query = { type:"Run", email: email};
+  const cursor = goalCollection.find(query);
+  return cursor.toArray();
+}
 module.exports = {
   getUser,
   getUserByToken,
   createUser,
   addWorkout,
   getWorkouts,
+  addRunGoal,
 };
