@@ -10,10 +10,11 @@ class Goals {
     }
 
     async runGoalUpload() {
+        const email = localStorage.getItem('userName');
         let runGoalValue = document.getElementById('run-goal').value;
-        let runGoalObject = { runGoal: runGoalValue };
+        let runGoalObject = { type: "run", runGoal: runGoalValue, email: email };
         try {
-            const response = await fetch('/api/runGoal', {
+            const response = await fetch('/api/runGoal/' + email, {
               method: 'POST',
               headers: {'content-type': 'application/json'},
               body: JSON.stringify(runGoalObject),
@@ -110,7 +111,8 @@ class Goals {
         let i = 0;
         let activities = []
         try {
-            const response = await fetch('/api/workouts');
+            const email = localStorage.getItem('userName');
+            const response = await fetch('/api/workouts?' + new URLSearchParams({email:email}));
             activities = await response.json();
         } catch {
             activities = JSON.parse(localStorage.getItem('activities')) || [];

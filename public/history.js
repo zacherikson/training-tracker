@@ -35,7 +35,8 @@ class History {
         let workouts = [];
         try {
             // Get the workouts from the service
-            const response = await fetch('/api/workouts');
+            const email = localStorage.getItem('userName');
+            const response = await fetch('/api/workouts/' + email);
             workouts = await response.json();
             // Save the workouts in case we go offline in the future
             localStorage.setItem('activities', JSON.stringify(workouts));
