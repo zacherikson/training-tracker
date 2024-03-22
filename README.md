@@ -25,6 +25,20 @@ Displayed here is a user uploading a run.
 - WebSocket data:
   - Users comment on each other's activities.
 
+### Service Deliverable
+In this deliverable, I implemented a backend service with endpoints for uploading a workout, listing all workouts, setting goals, and retrieving goals. I had to switch over from using localStorage in this deliverable.
+
+1. 40% - Create an HTTP service using Node.js and Express
+  - I downloaded Node.js, did npm install express, and implemented it into my index.js file, and it all works.
+2. 10% - Frontend served up using Express static middleware
+  - Express static middleware found in the index.js.
+3. 10% - Your frontend calls third party service endpoints
+  - Quote can be found on the founder page. https://startup.trainingtracker260.com/founder.html
+4. 20% - Your backend provides service endpoints
+  - Backend service endpoints include workout, workouts, runGoal, runGoals, etc.
+5. 20% - Your frontend calls your service endpoints
+  - I did this using the fetch function. Frontend calls include uploading a workout using POST /workout, retrieving all workouts GET /workouts, uploading goals using POST /runGoal or /bikeGoal etc., and retrieving goals using GET
+
 ### JavaScript Deliverable
 1. 20% JavaScript support for future login.
   - Login page uses a login() function and stores the username to localStorage
