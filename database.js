@@ -46,8 +46,8 @@ function addWorkout(workout) {
 }
 
 function getWorkouts() {
-  let username = localStorage.getItem('userName');
-  const query = {name: username}; //{ $gt: 0, $lt: 900 }
+  const userName = localStorage.getItem('userName');
+  const query = {name: userName}; //{ $gt: 0, $lt: 900 }
   // const options = {
   //   sort: { score: -1 },
   //   limit: 10,
