@@ -96,35 +96,35 @@ secureApiRouter.get('/workouts/:email', async (req, res) => {
 // GetRunGoal
 secureApiRouter.get('/runGoals/:email', async (req, res) => {
     const email = req.params.email;
-    const goal = await DB.getRunGoal(email);
+    const goal = await DB.getGoal("run",email);
     res.send(goal);
 });
 
 // GetBikeGoal
 secureApiRouter.get('/bikeGoals/:email', async (req, res) => {
     const email = req.params.email;
-    const goal = await DB.getBikeGoal(email);
+    const goal = await DB.getGoal("bike",email);
     res.send(goal);
 });
 
 // GetSwimGoal
 secureApiRouter.get('/swimGoals/:email', async (req, res) => {
     const email = req.params.email;
-    const goal = await DB.getSwimGoal(email);
+    const goal = await DB.getGoal("swim",email);
     res.send(goal);
 });
 
 // GetGymGoal
 secureApiRouter.get('/gymGoals/:email', async (req, res) => {
     const email = req.params.email;
-    const goal = await DB.getGymGoal(email);
+    const goal = await DB.getGoal("gym",email);
     res.send(goal);
 });
 
 // GetDietGoal
 secureApiRouter.get('/dietGoals/:email', async (req, res) => {
     const email = req.params.email;
-    const goal = await DB.getDietGoal(email);
+    const goal = await DB.getGoal("diet",email);
     res.send(goal);
 });
 
@@ -140,35 +140,35 @@ secureApiRouter.post('/workout', async (req, res) => {
 secureApiRouter.post('/runGoal', async (req, res) => {
     const runGoal = { ...req.body, ip: req.ip };
     await DB.addGoal(runGoal);
-    const goal = await DB.getRunGoal(runGoal.email);
+    const goal = await DB.getGoal("run",runGoal.email);
     res.send(goal);
 });
 
 secureApiRouter.post('/bikeGoal', async (req, res) => {
     const bikeGoal = { ...req.body, ip: req.ip };
     await DB.addGoal(bikeGoal);
-    const goal = await DB.getBikeGoal(bikeGoal.email);
+    const goal = await DB.getGoal("bike",bikeGoal.email);
     res.send(goal);
 });
 
 secureApiRouter.post('/swimGoal', async (req, res) => {
     const swimGoal = { ...req.body, ip: req.ip };
     await DB.addGoal(swimGoal);
-    const goal = await DB.getSwimGoal(swimGoal.email);
+    const goal = await DB.getGoal("swim",swimGoal.email);
     res.send(goal);
 });
 
 secureApiRouter.post('/gymGoal', async (req, res) => {
     const gymGoal = { ...req.body, ip: req.ip };
     await DB.addGoal(gymGoal);
-    const goal = await DB.getGymGoal(gymGoal.email);
+    const goal = await DB.getGoal("gym",gymGoal.email);
     res.send(goal);
 });
 
 secureApiRouter.post('/dietGoal', async (req, res) => {
     const dietGoal = { ...req.body, ip: req.ip };
     await DB.addGoal(dietGoal);
-    const goal = await DB.getDietGoal(dietGoal);
+    const goal = await DB.getGoal("diet",dietGoal);
     res.send(goal);
 });
 
@@ -194,11 +194,3 @@ function setAuthCookie(res, authToken) {
       sameSite: 'strict',
     });
   }
-
-// The workouts are saved in memory and disappear whenever the service is restarted.
-// let workouts = [];
-// function updateWorkouts(newWorkout, workouts) {
-//     workouts.push(newWorkout);
-//     return workouts;
-// }
-

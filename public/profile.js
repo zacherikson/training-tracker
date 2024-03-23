@@ -21,7 +21,6 @@ class Goals {
           });
   
         let newRunGoal = await response.json();
-        newRunGoal = newRunGoal.goal;
         localStorage.setItem('runGoal', JSON.stringify(newRunGoal));
         } catch (error) {
             console.error('Error:', error);
@@ -154,8 +153,7 @@ class Goals {
         try {
             const response = await fetch('/api/runGoals/'+this.email);
             maxRun = await response.json();
-            maxRun = maxRun.goal;
-            console.log("runGoal: " + maxRun);
+            // console.log(maxRun);
             localStorage.setItem("runGoal",maxRun);
         } catch (error) {
             console.error('Error:', error);
@@ -172,7 +170,6 @@ class Goals {
         try {
             const response = await fetch('/api/bikeGoals/'+this.email);
             maxBike = await response.json();
-            maxBike = maxBike.goal;
             localStorage.setItem("bikeGoal",maxBike);
         } catch (error) {
             console.error('Error:', error);
@@ -189,7 +186,6 @@ class Goals {
         try {
             const response = await fetch('/api/swimGoals/'+this.email);
             maxSwim = await response.json();
-            maxSwim = maxSwim.goal;
             localStorage.setItem("swimGoal",maxSwim);
         } catch (error) {
             console.error('Error:', error);
@@ -206,7 +202,6 @@ class Goals {
         try {
             const response = await fetch('/api/gymGoals/'+this.email);
             maxGym = await response.json();
-            maxGym = maxGym.goal;
             localStorage.setItem("gymGoal",maxGym);
         } catch (error) {
             console.error('Error:', error);
@@ -223,7 +218,6 @@ class Goals {
         try {
             const response = await fetch('/api/dietGoals/'+this.email);
             maxDiet = await response.json();
-            maxDiet = maxDiet.goal;
             localStorage.setItem("dietGoal",maxDiet);
         } catch (error) {
             console.error('Error:', error);

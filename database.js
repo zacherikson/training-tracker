@@ -62,31 +62,18 @@ async function addGoal(goal) {
   }
 }
 
-function getRunGoal(email) {
-  const query = { type:"run", email: email};
-  const cursor = goalCollection.find(query);
-  return cursor.toArray();
+async function getGoal(type, email) {
+  const query = { type:type, email: email};
+  const result = await goalCollection.findOne(query);
+  if(result){
+    return result.goal;
+  } else{
+    return '0';
+  }
+  
 }
-function getBikeGoal(email) {
-  const query = { type:"bike", email: email};
-  const cursor = goalCollection.find(query);
-  return cursor.toArray();
-}
-function getSwimGoal(email) {
-  const query = { type:"swim", email: email};
-  const cursor = goalCollection.find(query);
-  return cursor.toArray();
-}
-function getGymGoal(email) {
-  const query = { type:"gym", email: email};
-  const cursor = goalCollection.find(query);
-  return cursor.toArray();
-}
-function getDietGoal(email) {
-  const query = { type:"diet", email: email};
-  const cursor = goalCollection.find(query);
-  return cursor.toArray();
-}
+
+
 
 
 module.exports = {
@@ -96,9 +83,39 @@ module.exports = {
   addWorkout,
   getWorkouts,
   addGoal,
-  getRunGoal,
-  getBikeGoal,
-  getSwimGoal,
-  getGymGoal,
-  getDietGoal,
+  // getRunGoal,
+  // getBikeGoal,
+  // getSwimGoal,
+  // getGymGoal,
+  // getDietGoal,
+  getGoal,
 };
+
+
+
+
+// async function getRunGoal(email) {
+//   const query = { type:"run", email: email};
+//   const result = await goalCollection.findOne(query);
+//   return result.goal;
+// }
+// async function getBikeGoal(email) {
+//   const query = { type:"bike", email: email};
+//   const result = await goalCollection.findOne(query);
+//   return result.goal;
+// }
+// async function getSwimGoal(email) {
+//   const query = { type:"swim", email: email};
+//   const result = await goalCollection.findOne(query);
+//   return result.goal;
+// }
+// async function getGymGoal(email) {
+//   const query = { type:"gym", email: email};
+//   const result = await goalCollection.findOne(query);
+//   return result.goal;
+// }
+// async function getDietGoal(email) {
+//   const query = { type:"diet", email: email};
+//   const result = await goalCollection.findOne(query);
+//   return result.goal;
+// }
