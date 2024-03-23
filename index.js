@@ -94,92 +94,82 @@ secureApiRouter.get('/workouts/:email', async (req, res) => {
 });
 
 // GetRunGoal
-secureApiRouter.get('/runGoals/:email', (_req, res) => {
+secureApiRouter.get('/runGoals/:email', async (req, res) => {
     const email = req.params.email;
-
-    if (runGoal === ''){
-        res.send('0');
-    } else {
-        res.send(runGoal);
-    }
+    const goal = await DB.getRunGoal(email);
+    res.send(goal);
 });
 
 // GetBikeGoal
-secureApiRouter.get('/bikeGoals', (_req, res) => {
-    if (bikeGoal === ''){
-        res.send('0');
-    } else {
-        res.send(bikeGoal);
-    }
+secureApiRouter.get('/bikeGoals/:email', async (req, res) => {
+    const email = req.params.email;
+    const goal = await DB.getBikeGoal(email);
+    res.send(goal);
 });
 
 // GetSwimGoal
-secureApiRouter.get('/swimGoals', (_req, res) => {
-    if (swimGoal === ''){
-        res.send('0');
-    } else {
-        res.send(swimGoal);
-    }
+secureApiRouter.get('/swimGoals/:email', async (req, res) => {
+    const email = req.params.email;
+    const goal = await DB.getSwimGoal(email);
+    res.send(goal);
 });
 
 // GetGymGoal
-secureApiRouter.get('/gymGoals', (_req, res) => {
-    if (gymGoal === ''){
-        res.send('0');
-    } else {
-        res.send(gymGoal);
-    }
+secureApiRouter.get('/gymGoals/:email', async (req, res) => {
+    const email = req.params.email;
+    const goal = await DB.getGymGoal(email);
+    res.send(goal);
 });
 
 // GetDietGoal
-secureApiRouter.get('/dietGoals', (_req, res) => {
-    if (dietGoal === ''){
-        res.send('0');
-    } else {
-        res.send(dietGoal);
-    }
+secureApiRouter.get('/dietGoals/:email', async (req, res) => {
+    const email = req.params.email;
+    const goal = await DB.getDietGoal(email);
+    res.send(goal);
 });
 
 // SubmitWorkout
 secureApiRouter.post('/workout', async (req, res) => {
     const workout = { ...req.body, ip: req.ip };
     await DB.addWorkout(workout);
-    const workouts = await DB.getWorkouts();
+    const workouts = await DB.getWorkouts(workout.name);
   res.send(workouts);
 });
 
-// SubmitGoal
-// let runGoal = '';
-secureApiRouter.post('/runGoal/:email', async (req, res) => {
+
+secureApiRouter.post('/runGoal', async (req, res) => {
     const runGoal = { ...req.body, ip: req.ip };
-    await DB.addRunGoal(runGoal);
-    const goal = await DB.getRunGoal();
-    // runGoal = req.body.runGoal;
+    await DB.addGoal(runGoal);
+    const goal = await DB.getRunGoal(runGoal.email);
     res.send(goal);
 });
 
-let bikeGoal = '';
-secureApiRouter.post('/bikeGoal', (req, res) => {
-    bikeGoal = req.body.bikeGoal;
-    res.send(bikeGoal);
+secureApiRouter.post('/bikeGoal', async (req, res) => {
+    const bikeGoal = { ...req.body, ip: req.ip };
+    await DB.addGoal(bikeGoal);
+    const goal = await DB.getBikeGoal(bikeGoal.email);
+    res.send(goal);
 });
 
-let swimGoal = '';
-secureApiRouter.post('/swimGoal', (req, res) => {
-    swimGoal = req.body.swimGoal;
-    res.send(swimGoal);
+secureApiRouter.post('/swimGoal', async (req, res) => {
+    const swimGoal = { ...req.body, ip: req.ip };
+    await DB.addGoal(swimGoal);
+    const goal = await DB.getSwimGoal(swimGoal.email);
+    res.send(goal);
 });
 
-let gymGoal = '';
-secureApiRouter.post('/gymGoal', (req, res) => {
-    gymGoal = req.body.gymGoal;
-    res.send(gymGoal);
+secureApiRouter.post('/gymGoal', async (req, res) => {
+    const gymGoal = { ...req.body, ip: req.ip };
+    await DB.addGoal(gymGoal);
+    const goal = await DB.getGymGoal(gymGoal.email);
+    res.send(goal);
 });
 
-let dietGoal = '';
-secureApiRouter.post('/dietGoal', (req, res) => {
-    dietGoal = req.body.dietGoal;
-    res.send(dietGoal);
+secureApiRouter.post('/dietGoal', async (req, res) => {
+    const dietGoal = { ...req.body, ip: req.ip };
+    await DB.addGoal(dietGoal);
+    const goal = await DB.getDietGoal(dietGoal);
+    res.send(goal);
 });
 
 // Default error handler

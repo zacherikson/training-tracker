@@ -2,6 +2,7 @@ class Goals {
     constructor() {
         this.updateWeeklyGoals();
         this.showUpdates();
+        this.email = localStorage.getItem('userName');
     }
 
     showUpdates() {
@@ -10,17 +11,17 @@ class Goals {
     }
 
     async runGoalUpload() {
-        const email = localStorage.getItem('userName');
         let runGoalValue = document.getElementById('run-goal').value;
-        let runGoalObject = { type: "run", runGoal: runGoalValue, email: email };
+        let runGoalObject = { type: "run", goal: runGoalValue, email: this.email };
         try {
-            const response = await fetch('/api/runGoal/' + email, {
+            const response = await fetch('/api/runGoal', {
               method: 'POST',
               headers: {'content-type': 'application/json'},
               body: JSON.stringify(runGoalObject),
           });
   
-        const newRunGoal = await response.json();
+        let newRunGoal = await response.json();
+        newRunGoal = newRunGoal.goal;
         localStorage.setItem('runGoal', JSON.stringify(newRunGoal));
         } catch (error) {
             console.error('Error:', error);
@@ -30,7 +31,7 @@ class Goals {
     }
     async bikeGoalUpload() {
         let bikeGoalValue = document.getElementById('bike-goal').value;
-        let bikeGoalObject = { bikeGoal: bikeGoalValue };
+        let bikeGoalObject = { type: "bike", goal: bikeGoalValue, email: this.email };
         try {
             const response = await fetch('/api/bikeGoal', {
               method: 'POST',
@@ -48,7 +49,7 @@ class Goals {
     }
     async swimGoalUpload() {
         let swimGoalValue = document.getElementById('swim-goal').value;
-        let swimGoalObject = { swimGoal: swimGoalValue };
+        let swimGoalObject = { type:"swim", goal: swimGoalValue, email:this.email};
         try {
             const response = await fetch('/api/swimGoal', {
               method: 'POST',
@@ -66,7 +67,7 @@ class Goals {
     }
     async gymGoalUpload() {
         let gymGoalValue = document.getElementById('gym-goal').value;
-        let gymGoalObject = { gymGoal: gymGoalValue };
+        let gymGoalObject = { type:"gym",goal: gymGoalValue,email:this.email };
         try {
             const response = await fetch('/api/gymGoal', {
               method: 'POST',
@@ -84,7 +85,7 @@ class Goals {
     }
     async dietGoalUpload() {
         let dietGoalValue = document.getElementById('diet-goal').value;
-        let dietGoalObject = { dietGoal: dietGoalValue };
+        let dietGoalObject = { type:"diet",goal: dietGoalValue,email:this.email };
         try {
             const response = await fetch('/api/dietGoal', {
               method: 'POST',
@@ -111,8 +112,7 @@ class Goals {
         let i = 0;
         let activities = []
         try {
-            const email = localStorage.getItem('userName');
-            const response = await fetch('/api/workouts?' + new URLSearchParams({email:email}));
+            const response = await fetch('/api/workouts?' + new URLSearchParams({email:this.email}));
             activities = await response.json();
         } catch {
             activities = JSON.parse(localStorage.getItem('activities')) || [];
@@ -152,8 +152,10 @@ class Goals {
 
         let maxRun = '';
         try {
-            const response = await fetch('/api/runGoals');
+            const response = await fetch('/api/runGoals/'+this.email);
             maxRun = await response.json();
+            maxRun = maxRun.goal;
+            console.log("runGoal: " + maxRun);
             localStorage.setItem("runGoal",maxRun);
         } catch (error) {
             console.error('Error:', error);
@@ -168,8 +170,9 @@ class Goals {
         
         let maxBike = '';
         try {
-            const response = await fetch('/api/bikeGoals');
+            const response = await fetch('/api/bikeGoals/'+this.email);
             maxBike = await response.json();
+            maxBike = maxBike.goal;
             localStorage.setItem("bikeGoal",maxBike);
         } catch (error) {
             console.error('Error:', error);
@@ -184,8 +187,9 @@ class Goals {
 
         let maxSwim = '';
         try {
-            const response = await fetch('/api/swimGoals');
+            const response = await fetch('/api/swimGoals/'+this.email);
             maxSwim = await response.json();
+            maxSwim = maxSwim.goal;
             localStorage.setItem("swimGoal",maxSwim);
         } catch (error) {
             console.error('Error:', error);
@@ -200,8 +204,9 @@ class Goals {
 
         let maxGym = '';
         try {
-            const response = await fetch('/api/gymGoals');
+            const response = await fetch('/api/gymGoals/'+this.email);
             maxGym = await response.json();
+            maxGym = maxGym.goal;
             localStorage.setItem("gymGoal",maxGym);
         } catch (error) {
             console.error('Error:', error);
@@ -216,8 +221,9 @@ class Goals {
 
         let maxDiet = '';
         try {
-            const response = await fetch('/api/dietGoals');
+            const response = await fetch('/api/dietGoals/'+this.email);
             maxDiet = await response.json();
+            maxDiet = maxDiet.goal;
             localStorage.setItem("dietGoal",maxDiet);
         } catch (error) {
             console.error('Error:', error);
