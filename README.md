@@ -25,6 +25,14 @@ Displayed here is a user uploading a run.
 - WebSocket data:
   - Users comment on each other's activities.
 
+### Login Deliverable
+1. 20% - Supports new user registration
+  - Use the create button with 
+20% - Supports existing user authentication
+20% - Stores application data in MongoDB
+20% - Stores and retrieves credentials in MongoDB
+20% - Restricts application functionality based upon authentication
+
 ### Service Deliverable
 In this deliverable, I implemented a backend service with endpoints for uploading a workout, listing all workouts, setting goals, and retrieving goals. I had to switch over from using localStorage in this deliverable.
 
