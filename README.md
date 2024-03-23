@@ -26,12 +26,18 @@ Displayed here is a user uploading a run.
   - Users comment on each other's activities.
 
 ### Login Deliverable
+In this deliverable, I changed my way of storing data so that now each user can see their personlized history of workouts and goals. I accomplished that using MongoDB. I added user registration and user authentication.
+
 1. 20% - Supports new user registration
-  - Use the create button with 
+  - Use the create button with an email and password on the login page.
 20% - Supports existing user authentication
+  - If a user submits a proper email and password then they can login.
 20% - Stores application data in MongoDB
+  - Users, workouts, and goals are stored in MongoDB.
 20% - Stores and retrieves credentials in MongoDB
+  - User authentication controlled through MongoDB.
 20% - Restricts application functionality based upon authentication
+  - If you don't login, you can't use the app at all.
 
 ### Service Deliverable
 In this deliverable, I implemented a backend service with endpoints for uploading a workout, listing all workouts, setting goals, and retrieving goals. I had to switch over from using localStorage in this deliverable.
