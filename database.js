@@ -51,23 +51,54 @@ function getWorkouts(email) {
   return cursor.toArray();
 }
 
-async function addRunGoal(goal, email) {
-  const query = { email: email }; 
-  const update = { $set: { runGoal: goal.runGoal } }; 
-  await goalCollection.updateOne(query, update);
-  // goalCollection.insertOne(goal);
+async function addGoal(goal) {
+  const existingGoal = await goalCollection.findOne({ type: goal.type,email: goal.email });
+  if (existingGoal) {
+    const query = { type: goal.type, email: goal.email };
+    const update = { $set: { goal: goal.goal } };
+    await goalCollection.updateOne(query, update);
+  } else {
+    await goalCollection.insertOne(goal);
+  }
 }
 
 function getRunGoal(email) {
-  const query = { type:"Run", email: email};
+  const query = { type:"run", email: email};
   const cursor = goalCollection.find(query);
   return cursor.toArray();
 }
+function getBikeGoal(email) {
+  const query = { type:"bike", email: email};
+  const cursor = goalCollection.find(query);
+  return cursor.toArray();
+}
+function getSwimGoal(email) {
+  const query = { type:"swim", email: email};
+  const cursor = goalCollection.find(query);
+  return cursor.toArray();
+}
+function getGymGoal(email) {
+  const query = { type:"gym", email: email};
+  const cursor = goalCollection.find(query);
+  return cursor.toArray();
+}
+function getDietGoal(email) {
+  const query = { type:"diet", email: email};
+  const cursor = goalCollection.find(query);
+  return cursor.toArray();
+}
+
+
 module.exports = {
   getUser,
   getUserByToken,
   createUser,
   addWorkout,
   getWorkouts,
-  addRunGoal,
+  addGoal,
+  getRunGoal,
+  getBikeGoal,
+  getSwimGoal,
+  getGymGoal,
+  getDietGoal,
 };
